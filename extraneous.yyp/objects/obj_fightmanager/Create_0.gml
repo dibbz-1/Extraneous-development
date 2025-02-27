@@ -10,7 +10,7 @@ alarm[0] = frames_s;
 alarm[1] = 30;
 char_size = 2;
 
-portrait_background = spr_portraitbg;
+portrait_background = spr_bannerbeebo;
 portrait_width = 150/sprite_get_width(portrait_background);
 portrait_height = 230/sprite_get_height(portrait_background);
 health_fill = spr_specialbar_fill;
@@ -23,6 +23,8 @@ beep_special = 34;
 
 ajohn_hp = 100;
 ajohn_special = 0;
+
+instance_create_depth(10,180,0,obj_bannerBeebo)
 
 
 draw_set_halign(fa_right);
