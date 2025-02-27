@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"fun_textPrint",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"fun_textPrint",
+  "parent":{
+    "name":"Scripts",
+    "path":"folders/Scripts.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

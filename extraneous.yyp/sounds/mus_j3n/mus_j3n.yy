@@ -1,0 +1,25 @@
+{
+  "$GMSound":"",
+  "%Name":"mus_j3n",
+  "audioGroupId":{
+    "name":"audiogroup_default",
+    "path":"audiogroups/audiogroup_default",
+  },
+  "bitDepth":1,
+  "bitRate":128,
+  "compression":0,
+  "conversionMode":0,
+  "duration":122.62082,
+  "name":"mus_j3n",
+  "parent":{
+    "name":"Music",
+    "path":"folders/Music.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"mus_j3n.wav",
+  "type":0,
+  "volume":1.0,
+}

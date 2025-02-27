@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"fun_fade",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"fun_fade",
+  "parent":{
+    "name":"Scripts",
+    "path":"folders/Scripts.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}
