@@ -33,7 +33,7 @@ switch state{
 		}
 	break;
 	case 4:
-		move_towards_point(obj_player.x,obj_player.y+5,mvSpd*1.5);
+		move_towards_point(obj_player.x,obj_player.y+15,mvSpd*1.5);
 		
 	break;
 	case 5:
