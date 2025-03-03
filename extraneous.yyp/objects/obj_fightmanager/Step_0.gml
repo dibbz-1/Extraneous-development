@@ -16,6 +16,8 @@ switch global.fightingState{
 		}
 		if confirm{
 			global.fightingState++;
+			obj_cameraManager.gliding=8;
+			create_text("player turn");
 		}
 	break;
 }

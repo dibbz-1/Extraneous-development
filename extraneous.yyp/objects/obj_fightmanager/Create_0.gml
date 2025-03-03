@@ -19,11 +19,11 @@ health_border = spr_specialbarborder;
 color = c_white;
 textxl = 55;
 
-beep_hp = 100;
-beep_special = 34;
+enemy_hp = 100;
+
+beebo_hp = 100;
 
 ajohn_hp = 100;
-ajohn_special = 0;
 
 instance_create_depth(145,250,0,char_1)
 instance_create_depth(210,250,0,char_2)

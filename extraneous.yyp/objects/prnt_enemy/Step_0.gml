@@ -3,7 +3,7 @@ switch state{
 		var rand=round(random_range(1,mvFreq));
 		if rand==1{
 			state++;
-		} else if distance_to_object(obj_player)<50 && global.cutStep==0 state=4; 
+		} else if distance_to_object(obj_player)<50 && global.plrMove state=4; 
 	break;
 	case 1://which direction?
 		var xory=round(random_range(1,3));
@@ -34,7 +34,7 @@ switch state{
 	break;
 	case 4:
 		move_towards_point(obj_player.x,obj_player.y+16,mvSpd*1.5);
-		
+		if !global.plrMove state=0;
 	break;
 	case 5:
 		//do nothing

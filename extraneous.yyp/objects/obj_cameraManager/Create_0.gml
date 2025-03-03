@@ -21,3 +21,14 @@ global.cutStep=0;
 
 //fighting?
 global.fightingState=0;
+
+/* gliding cases
+
+1 - player focus moving
+2 - player focus zoomed
+3 - ajohn focus zoomed
+4 - test (obselete)
+5 - fight transition
+6 - fight default
+7 - enemy focus
+8 - fight player turn

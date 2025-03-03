@@ -11,6 +11,11 @@ function text_engine(_text,_speed,_char=0,_emote = "neutral"){
 			side[page_number] = "L";
 			sound[page_number]="bap";
 		break;
+		case "top":
+			portrait[page_number] = spr_none;
+			side[page_number] = "T";
+			sound[page_number]="bap";
+		break;
 		case "enemy":
 			portrait[page_number] = spr_bug;
 			side[page_number] = "L";

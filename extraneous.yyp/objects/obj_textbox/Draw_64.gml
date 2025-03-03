@@ -80,16 +80,14 @@ if event[page]=="" //&& event[page+check]==""
 		//if done typing
 		if draw_char == text_length[page]{
 			
-				if page != page_number {
-					
+				if page != page_number-1 {
 					page++;
 					draw_char = 0;
 				}
 				else{
-	
-					
 					if (option_pos >= 0){
 						create_text(option_link_id[option_pos]);
+						show_debug_message("boo");
 					}
 					instance_destroy();
 				}
@@ -128,7 +126,7 @@ if event[page]=="" //&& event[page+check]==""
 			
 			}
 		}
-		if cutState==cutsceneStates.active{
+		if cutState==cutsceneStates.active && char[page]!="top"{
 			switch char[page]{
 				case "ajohn":
 					obj_cameraManager.gliding=3;
@@ -150,7 +148,7 @@ if event[page]=="" //&& event[page+check]==""
 		}
 
 		//---------options
-		if draw_char = text_length[page] && page == page_number
+		if draw_char = text_length[page] && page == page_number-1
 		{
 			// font setup
 			//draw_set_font(fnt_default_small);

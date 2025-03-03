@@ -1,9 +1,9 @@
 {
   "$GMScript":"v1",
-  "%Name":"fun_textPrint",
+  "%Name":"fun_dialogue",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"fun_textPrint",
+  "name":"fun_dialogue",
   "parent":{
     "name":"Scripts",
     "path":"folders/Scripts.yy",
