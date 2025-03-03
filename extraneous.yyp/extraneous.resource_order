@@ -83,6 +83,7 @@
     {"name":"spr_enemytest","order":18,"path":"sprites/spr_enemytest/spr_enemytest.yy",},
     {"name":"spr_fightGraphic","order":25,"path":"sprites/spr_fightGraphic/spr_fightGraphic.yy",},
     {"name":"spr_ghost","order":21,"path":"sprites/spr_ghost/spr_ghost.yy",},
+    {"name":"spr_grassTiles","order":28,"path":"sprites/spr_grassTiles/spr_grassTiles.yy",},
     {"name":"spr_key","order":22,"path":"sprites/spr_key/spr_key.yy",},
     {"name":"spr_lilman","order":10,"path":"sprites/spr_lilman/spr_lilman.yy",},
     {"name":"spr_none","order":19,"path":"sprites/spr_none/spr_none.yy",},
@@ -93,5 +94,6 @@
     {"name":"spr_trans","order":6,"path":"sprites/spr_trans/spr_trans.yy",},
     {"name":"spr_txtbox","order":8,"path":"sprites/spr_txtbox/spr_txtbox.yy",},
     {"name":"spr_wurmie","order":26,"path":"sprites/spr_wurmie/spr_wurmie.yy",},
+    {"name":"tile_grass","order":1,"path":"tilesets/tile_grass/tile_grass.yy",},
   ],
 }
