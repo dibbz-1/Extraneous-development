@@ -1,14 +1,15 @@
 //characters
 global.mus=audio_play_sound(mus_fight,1,1);
 
-char_1 = spr_beepbattlenormal;
-char_2 = spr_ajohnbattlenormal;
+char_1 = obj_bannerBeebo;
+char_2 = obj_bannerAjohn;
 enemy = spr_none;
 sub = 0;
 frames_s = 7
 alarm[0] = frames_s;
 alarm[1] = 30;
 char_size = 2;
+turn=0;
 
 portrait_background = spr_bannerbeebo;
 portrait_width = 150/sprite_get_width(portrait_background);
@@ -24,7 +25,8 @@ beep_special = 34;
 ajohn_hp = 100;
 ajohn_special = 0;
 
-instance_create_depth(10,180,0,obj_bannerBeebo)
+instance_create_depth(145,250,0,char_1)
+instance_create_depth(210,250,0,char_2)
 
 
 draw_set_halign(fa_right);

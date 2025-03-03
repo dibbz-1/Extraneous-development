@@ -3,6 +3,7 @@ if  !instance_exists(obj_textbox) && global.fightingState=0{
 } else if global.fightingState==1{
 	gliding=5;
 } 
+depth=0;
 
 
 switch gliding{
@@ -43,7 +44,7 @@ switch gliding{
 		cam_glide(obj_player.x,obj_player.y-10,CAM_WIDTH/3,CAM_HEIGHT/3,8);
 		//start fight
 		if round(width)=CAM_WIDTH/3 && !zoomFinished{
-			fadeToRoom(rm_fight, 5, c_black, 65, 70, global.enemy);
+			fadeToRoom(rm_fight, 5, c_black, 185, 110, global.enemy);
 			
 			global.fightingState=2;
 			zoomFinished=true;
@@ -51,7 +52,8 @@ switch gliding{
 	break;
 	
 	case 6:
-		cam_glide(room_width/2,room_width/2,room_width,room_height,10);
+		focus="global";
+		cam_glide(245,150,CAM_WIDTH/1.2,CAM_HEIGHT/1.2,10);
 	break;
 	
 	case 7:
