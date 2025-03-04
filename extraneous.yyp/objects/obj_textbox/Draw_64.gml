@@ -10,10 +10,8 @@ var chary = 0;
 //draw_text(50,50,draw_char);
 //draw_text(75,50,option_pos);
 //cutscenes
-if (page==page_number) check=0;
-else check=1;
 if page>=page_number instance_destroy();
-if event[page]=="" //&& event[page+check]==""
+if event[page]==""
 {
 	txtbox_x = 430 - (txtbox_width/2);
 	var portrait_x = txtbox_x 
@@ -80,18 +78,29 @@ if event[page]=="" //&& event[page+check]==""
 		//if done typing
 		if draw_char == text_length[page]{
 			
-				if page != page_number-1 {
+			if event[page+1]!="step"{
+				
+				if page != page_number {
 					page++;
 					draw_char = 0;
-				}
-				else{
+					show_debug_message("boo");
+				} else if page==page_number-1{
 					if (option_pos >= 0){
 						create_text(option_link_id[option_pos]);
-						show_debug_message("boo");
+						show_debug_message("doo");
 					}
 					instance_destroy();
 				}
-			
+				
+			} else {
+				global.cutStep++;
+				if (option_pos >= 0){
+					create_text(option_link_id[option_pos]);
+					show_debug_message("doo");
+				}
+				instance_destroy();
+			}
+				
 		}
 	}
 	if event[page]==""{
@@ -193,6 +202,7 @@ if event[page]=="" //&& event[page+check]==""
 		}
 	}
 } else {
+	show_debug_message(event[page])
 	switch event[page]{
 		case "fight goober":
 			start_fight("guy");
@@ -210,7 +220,7 @@ if event[page]=="" //&& event[page+check]==""
 		
 		case "fight step":
 			global.fightingState++;
-			show_debug_message("boo");
+			//show_debug_message("boo");
 			
 		break;
 		
@@ -238,13 +248,9 @@ if event[page]=="" //&& event[page+check]==""
 			audio_stop_all();
 		break;
 		case "step":
-			
 			++global.cutStep;
-			
+			show_debug_message("dick");
 		break;
 	}
-	++page;
-	if page==page_number{
-		
-	}
+	if page!=page_number page++;
 }

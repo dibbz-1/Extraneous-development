@@ -1,17 +1,16 @@
 switch global.cutStep{
-	case 1:
+	case 2:
 		if ajohnTrick{
-			show_debug_message("fart");
 			counter++;
 			obj_ajohn_npc.x--;
 			if counter==20{
 				create_text("trick over");
 				global.cutStep++;
 			}
-		}else global.cutStep=3;
+		}else global.cutStep=4;
 	break;
 	
-	case 3:
+	case 4:
 		global.plrMove=1
 		global.cutStep=0;
 		obj_ajohn_npc.interact=true;

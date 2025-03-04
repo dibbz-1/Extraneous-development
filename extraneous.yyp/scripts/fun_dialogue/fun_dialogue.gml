@@ -13,26 +13,27 @@ function text_id_is(_textid){
 		// npc_dialogue \\
 		case "log00":
 			cutscene_event("ajohn mus");
-			text_engine("DO you want to seean awesome trick?",0.5,"ajohn");
+			text_engine("Do you want to see an awesome trick?",0.5,"ajohn");
 			scr_option("yes","yes");
 			scr_option("no","no");
 			cutscene_event("step");
 		break;
 		case "no":
-			ajohnTrick=false;
+			scn_ajohnTest.ajohnTrick=false;
 			text_engine("aww.",0.5,"ajohn");
-			cutscene_event("step");
 			cutscene_event("outside mus");
+			cutscene_event("step");
 		break;
 		case "yes":
-			ajohnTrick=true;
+			scn_ajohnTest.ajohnTrick=true;
 			text_engine("yay!",0.5,"ajohn");
-			cutscene_event("step")
-		break;
-		case "trick finished":
-			text_engine("that was awesome, huh?",0.5,"ajohn");
+			text_engine("Watch this",0.5,"ajohn");
 			cutscene_event("step");
+		break;
+		case "trick over":
+			text_engine("that was awesome, huh?",0.5,"ajohn");
 			cutscene_event("outside mus");
+			cutscene_event("step");
 		break;
 		
 		case ("fight test"):
