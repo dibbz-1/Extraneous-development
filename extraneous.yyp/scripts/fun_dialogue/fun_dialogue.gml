@@ -49,9 +49,7 @@ function text_id_is(_textid){
 		case ("player turn"):
 			text_engine("What would you like to do?", 1, "top");
 			scr_option("attack","fight.attack");
-			scr_option("item","fight.item");
-			scr_option("special","fight.special");
-			scr_option("pussy","fight.pussy");
+			scr_option("skip","fight.item");
 			cutscene_event("fight step");
 		break;
 		

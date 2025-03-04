@@ -83,11 +83,11 @@ if event[page]==""
 				if page != page_number {
 					page++;
 					draw_char = 0;
-					show_debug_message("boo");
+					
 				} else if page==page_number-1{
 					if (option_pos >= 0){
 						create_text(option_link_id[option_pos]);
-						show_debug_message("doo");
+						
 					}
 					instance_destroy();
 				}
@@ -96,7 +96,7 @@ if event[page]==""
 				global.cutStep++;
 				if (option_pos >= 0){
 					create_text(option_link_id[option_pos]);
-					show_debug_message("doo");
+					
 				}
 				instance_destroy();
 			}
@@ -172,18 +172,20 @@ if event[page]==""
 			{
 				//option box
 				var _ow = string_width(option[op]) +_opborder*2;
-				draw_sprite_ext(txtb_sprite, 0, _txtboX+16, _txtboY-_opspace*option_number-_opspace*op, _ow/txtb_spr_width, (_opspace-1)/txtb_spr_height, 0, c_white, 1);
-		
+				if side[page]!="T" draw_sprite_ext(txtb_sprite, 0, _txtboX+16, _txtboY-_opspace*option_number-_opspace*op, _ow/txtb_spr_width, (_opspace-1)/txtb_spr_height, 0, c_white, 1);
+				else draw_sprite_ext(txtb_sprite, 0, _txtboX+16, _txtboY+txtbox_height+_opspace*option_number-_opspace*op, _ow/txtb_spr_width, (_opspace-1)/txtb_spr_height, 0, c_white, 1);
 				//arrow
 				if option_pos == op {
 		
-					draw_sprite(spr_optionselect,arrowsub,_txtboX-50,_txtboY-_opspace*option_number-_opspace*op - 20);
+					if side[page]!="T" draw_sprite(spr_optionselect,arrowsub,_txtboX-50,_txtboY-_opspace*option_number-_opspace*op - 20);
+					else draw_sprite(spr_optionselect,arrowsub,_txtboX-50,_txtboY+txtbox_height+_opspace*option_number-_opspace*op - 20);
 		
 				}
 		
 				//text
 		
-				draw_text_transformed(_txtboX+16+_opborder, _txtboY-_opspace*option_number-_opspace*op, option[op],0.75,0.75,0)
+				if side[page]!="T" draw_text_transformed(_txtboX+16+_opborder, _txtboY-_opspace*option_number-_opspace*op, option[op],0.75,0.75,0)
+				else  draw_text_transformed(_txtboX+16+_opborder, _txtboY+txtbox_height+_opspace*option_number-_opspace*op, option[op],0.75,0.75,0)
 			}
 		}
 
