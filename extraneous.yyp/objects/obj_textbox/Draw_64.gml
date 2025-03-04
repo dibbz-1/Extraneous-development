@@ -210,7 +210,6 @@ if event[page]=="" //&& event[page+check]==""
 		
 		case "fight step":
 			global.fightingState++;
-			obj_cameraManager.gliding=6;
 			show_debug_message("boo");
 			
 		break;

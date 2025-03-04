@@ -6,6 +6,7 @@ var confirm = keyboard_check_pressed(ord("Z"));
 
 switch global.fightingState{
 	case 3:
+		obj_cameraManager.gliding=6
 		if right{
 			if turn!=1 turn++;
 			else turn=0;
