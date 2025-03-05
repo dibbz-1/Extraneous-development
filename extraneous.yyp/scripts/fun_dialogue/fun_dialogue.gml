@@ -49,10 +49,15 @@ function text_id_is(_textid){
 		case ("player turn"):
 			text_engine("What would you like to do?", 1, "top");
 			scr_option("attack","fight.attack");
-			scr_option("skip","fight.item");
-			cutscene_event("fight step");
+			scr_option("item","fight.item");
+			scr_option("skill","fight.skill");
+			scr_option("skip","fight.skip");
+			cutscene_event("step");
 		break;
-		
+		case "fight.attack":
+			obj_fightmanager.playerAct="attack";
+			text_engine("you attacked!", 1, "top");
+			cutscene_event("fight step");
 		case "log_locked":
 			text_engine("locked.",1,"beebo","neutral");
 		break;

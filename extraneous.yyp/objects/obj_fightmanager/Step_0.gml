@@ -21,4 +21,18 @@ switch global.fightingState{
 			create_text("player turn");
 		}
 	break;
+	case 5:
+		switch playerAct{
+			case "attack":
+				obj_cameraManager.gliding=2;
+				if !tut{
+					if !spawned instance_create_depth(0,0,obj_player.depth-1,gpx_spamPrompt); spawned=true;
+					if !instance_exists(gpx_spamPrompt) tut=true;
+				}
+				else{
+					
+				}
+				
+		}
+	break;
 }

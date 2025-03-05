@@ -25,6 +25,11 @@ beebo_hp = 100;
 
 ajohn_hp = 100;
 
+playerAct="";
+
+tut=false;
+spawned=false;
+
 instance_create_depth(145,250,0,char_1)
 instance_create_depth(210,250,0,char_2)
 
@@ -37,8 +42,9 @@ draw_set_halign(fa_right);
 	STATE 0 - not fighting
 	STATE 1 - fighting init.
 	STATE 2 - opening dialogue
-	STATE 3 - player turn
-	STATE 4 - player turn execution
-	STATE 5 - enemy turn execution
+	STATE 3 - player turn | choosing character
+	STATE 4 - player action
+	STATE 5 - player action execution
+	STATE 6 - enemy turn execution
 	RETURN TO STATE 2, IF NO DIALOGUE SKIP TO STATE 3
 */

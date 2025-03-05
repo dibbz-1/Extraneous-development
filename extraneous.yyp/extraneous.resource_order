@@ -24,6 +24,7 @@
   "ResourceOrderSettings":[
     {"name":"fnt_default_small","order":1,"path":"fonts/fnt_default_small/fnt_default_small.yy",},
     {"name":"Font3","order":2,"path":"fonts/Font3/Font3.yy",},
+    {"name":"gpx_spamPrompt","order":1,"path":"objects/gpx_spamPrompt/gpx_spamPrompt.yy",},
     {"name":"NPC_TEMPLATE","order":6,"path":"objects/NPC_TEMPLATE/NPC_TEMPLATE.yy",},
     {"name":"obj_ajohn_npc","order":8,"path":"objects/obj_ajohn_npc/obj_ajohn_npc.yy",},
     {"name":"obj_bannerAjohn","order":23,"path":"objects/obj_bannerAjohn/obj_bannerAjohn.yy",},
@@ -88,6 +89,7 @@
     {"name":"spr_lilman","order":10,"path":"sprites/spr_lilman/spr_lilman.yy",},
     {"name":"spr_none","order":19,"path":"sprites/spr_none/spr_none.yy",},
     {"name":"spr_optionselect","order":13,"path":"sprites/spr_optionselect/spr_optionselect.yy",},
+    {"name":"spr_spamPrompt","order":29,"path":"sprites/spr_spamPrompt/spr_spamPrompt.yy",},
     {"name":"spr_specialbar_fill","order":17,"path":"sprites/spr_specialbar_fill/spr_specialbar_fill.yy",},
     {"name":"spr_specialbarborder","order":16,"path":"sprites/spr_specialbarborder/spr_specialbarborder.yy",},
     {"name":"spr_tileBasic","order":2,"path":"sprites/spr_tileBasic/spr_tileBasic.yy",},
