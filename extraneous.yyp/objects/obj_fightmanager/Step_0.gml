@@ -26,11 +26,18 @@ switch global.fightingState{
 			case "attack":
 				obj_cameraManager.gliding=2;
 				if !tut{
-					if !spawned instance_create_depth(0,0,obj_player.depth-1,gpx_spamPrompt); spawned=true;
-					if !instance_exists(gpx_spamPrompt) tut=true;
+					if !spawned{ 
+						instance_create_depth(0,0,obj_player.depth-1,gpx_spamPrompt); 
+						spawned=true;
+					}
+					else if !instance_exists(gpx_spamPrompt){ 
+						tut=true; 
+						spawned=false; 
+						show_debug_message("boi");
+					}
 				}
 				else{
-					
+					if !spawned instance_create_depth(0,0,obj_player.depth-1,obj_quicktime); spawned=true;
 				}
 				
 		}

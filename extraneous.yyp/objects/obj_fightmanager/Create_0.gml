@@ -27,7 +27,7 @@ ajohn_hp = 100;
 
 playerAct="";
 
-tut=false;
+tut=true;
 spawned=false;
 
 instance_create_depth(145,250,0,char_1)

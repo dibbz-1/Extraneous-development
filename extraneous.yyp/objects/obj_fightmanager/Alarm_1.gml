@@ -1,1 +1,2 @@
-create_text("fight test");
+//create_text("fight test");
+global.fightingState++;
