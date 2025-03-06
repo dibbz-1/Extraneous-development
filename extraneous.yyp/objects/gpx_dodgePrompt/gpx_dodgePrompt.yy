@@ -8,8 +8,8 @@
   "name":"gpx_dodgePrompt",
   "overriddenProperties":[],
   "parent":{
-    "name":"Animated Graphics",
-    "path":"folders/Animated Graphics.yy",
+    "name":"Graphics",
+    "path":"folders/Graphics.yy",
   },
   "parentObjectId":{
     "name":"prnt_tutorialPrompts",

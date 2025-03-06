@@ -1,6 +1,6 @@
 {
   "FolderOrderSettings":[
-    {"name":"Animated Graphics","order":19,"path":"folders/Animated Graphics.yy",},
+    {"name":"Graphics","order":19,"path":"folders/Graphics.yy",},
     {"name":"Animation Curves","order":11,"path":"folders/Animation Curves.yy",},
     {"name":"dialogue system","order":15,"path":"folders/dialogue system.yy",},
     {"name":"Extensions","order":13,"path":"folders/Extensions.yy",},
@@ -96,6 +96,7 @@
     {"name":"spr_enemyBulletTest","order":41,"path":"sprites/spr_enemyBulletTest/spr_enemyBulletTest.yy",},
     {"name":"spr_enemytest","order":18,"path":"sprites/spr_enemytest/spr_enemytest.yy",},
     {"name":"spr_fightGraphic","order":25,"path":"sprites/spr_fightGraphic/spr_fightGraphic.yy",},
+    {"name":"spr_font","order":44,"path":"sprites/spr_font/spr_font.yy",},
     {"name":"spr_ghost","order":21,"path":"sprites/spr_ghost/spr_ghost.yy",},
     {"name":"spr_grassTiles","order":28,"path":"sprites/spr_grassTiles/spr_grassTiles.yy",},
     {"name":"spr_great","order":38,"path":"sprites/spr_great/spr_great.yy",},

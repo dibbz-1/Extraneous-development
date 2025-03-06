@@ -10,8 +10,8 @@
   "name":"gpx_hitPower",
   "overriddenProperties":[],
   "parent":{
-    "name":"Animated Graphics",
-    "path":"folders/Animated Graphics.yy",
+    "name":"Graphics",
+    "path":"folders/Graphics.yy",
   },
   "parentObjectId":null,
   "persistent":false,

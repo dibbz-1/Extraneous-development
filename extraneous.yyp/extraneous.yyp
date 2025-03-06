@@ -10,7 +10,7 @@
   },
   "defaultScriptType":1,
   "Folders":[
-    {"$GMFolder":"","%Name":"Animated Graphics","folderPath":"folders/Animated Graphics.yy","name":"Animated Graphics","resourceType":"GMFolder","resourceVersion":"2.0",},
+    {"$GMFolder":"","%Name":"Graphics","folderPath":"folders/Graphics.yy","name":"Graphics","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Animation Curves","folderPath":"folders/Animation Curves.yy","name":"Animation Curves","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"dialogue system","folderPath":"folders/dialogue system.yy","name":"dialogue system","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Extensions","folderPath":"folders/Extensions.yy","name":"Extensions","resourceType":"GMFolder","resourceVersion":"2.0",},
@@ -125,6 +125,7 @@
     {"id":{"name":"spr_enemyBulletTest","path":"sprites/spr_enemyBulletTest/spr_enemyBulletTest.yy",},},
     {"id":{"name":"spr_enemytest","path":"sprites/spr_enemytest/spr_enemytest.yy",},},
     {"id":{"name":"spr_fightGraphic","path":"sprites/spr_fightGraphic/spr_fightGraphic.yy",},},
+    {"id":{"name":"spr_font","path":"sprites/spr_font/spr_font.yy",},},
     {"id":{"name":"spr_ghost","path":"sprites/spr_ghost/spr_ghost.yy",},},
     {"id":{"name":"spr_grassTiles","path":"sprites/spr_grassTiles/spr_grassTiles.yy",},},
     {"id":{"name":"spr_great","path":"sprites/spr_great/spr_great.yy",},},
