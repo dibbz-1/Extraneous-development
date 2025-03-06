@@ -49,7 +49,9 @@ switch global.fightingState{
 					}
 				break;
 				default:
-					global.fightingState++;
+					switch ajohnAct{
+						
+					}
 				break;
 			}
 		} else{

@@ -42,12 +42,8 @@ function text_id_is(_textid){
 		break;
 		
 		// fight dialogue \\
-		
-		case ("fightlog test"):
-			text_engine("You are met with a foe of unknown power.", 1);
-		break;
 		case ("player turn"):
-			text_engine("What would you like Beebo to do?", 1, "top");
+			text_engine("Beebo's turn", 1, "top");
 			scr_option("attack","fight.attack");
 			scr_option("item","fight.item");
 			scr_option("skill","fight.skill");
@@ -55,7 +51,7 @@ function text_id_is(_textid){
 			cutscene_event("step");
 		break;
 		case ("ajohn turn"):
-			text_engine("What would you like Ajohn to do?", 1, "top");
+			text_engine("Ajohn's turn", 1, "top");
 			scr_option("attack","afight.attack");
 			scr_option("item","fight.item");
 			scr_option("skill","afight.skill");
@@ -64,12 +60,12 @@ function text_id_is(_textid){
 		break;
 		case "fight.attack":
 			fight.playerAct="attack";
-			text_engine("you attacked!", 1, "top");
+			text_engine("Beebo will attack", 1, "top");
 			cutscene_event("fight step");
 		break;
 		case "afight.attack":
 			fight.ajohnAct="attack";
-			text_engine("you attacked!", 1, "top");
+			text_engine("Ajohn will attack", 1, "top");
 			cutscene_event("fight step");
 		break;
 		case "fight.item":
@@ -81,10 +77,18 @@ function text_id_is(_textid){
 			cutscene_event("step");
 		break;
 		case "promethazine":
-			text_engine("I can't put down the cup.",0.5,"beebo");
-			text_engine("Beebo regained 20 HP!",0.5,"top");
-			fight.beebo_hp+=20 ;
-			if fight.beebo_hp>fight.beebo_maxhp fight.beebo_hp-=(fight.beebo_hp-fight.beebo_maxhp);
+			if fight.turn==0{
+				text_engine("I can't put down the cup.",0.5,"beebo");
+				text_engine("Beebo regained 20 HP!",0.5,"top");
+				fight.beebo_hp+=20 ;
+				if fight.beebo_hp>fight.beebo_maxhp fight.beebo_hp-=(fight.beebo_hp-fight.beebo_maxhp);
+			} else if fight.turn==1{
+				text_engine("I can't put down the cup.",0.5,"ajohn");
+				text_engine("Ajohn regained 20 HP!",0.5,"top");
+				fight.ajohn_hp+=20 ;
+				if fight.ajohn_hp>fight.ajohn_maxhp fight.ajohn_hp-=(fight.ajohn_hp-fight.ajohn_maxhp);
+			}
+				
 			cutscene_event("fight step");
 		break;
 		case "log_locked":
