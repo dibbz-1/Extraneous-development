@@ -41,8 +41,5 @@ if !instance_exists(obj_textbox) && !instance_exists(obj_rmTrans) && global.plrM
 		audio_play_sound(snd_hit,1,0);
 		obj_fightmanager.beebo_hp-=10;
 	}
-	if !(x+xSpd>200 or x+xSpd<160) x+=xSpd;
-} else if global.fightingState==3{
-	if x<185 x++
-	else if x>185 x--
+	if !(x+xSpd>300 or x+xSpd<160) x+=xSpd;
 }

@@ -72,6 +72,18 @@ function text_id_is(_textid){
 			text_engine("you attacked!", 1, "top");
 			cutscene_event("fight step");
 		break;
+		case "fight.item":
+			obj_fightmanager.playerAct="item";
+			text_engine("which item would you like to use?", 1, "top");
+			for (var i=0; i<array_length(global.items); i++){
+				scr_option(global.items[i],global.items[i]);
+			}
+			cutscene_event("step");
+		break;
+		case "promethazine":
+			text_engine("I can't put down the cup.",0.5,"beebo");
+			cutscene_event("fight step");
+		break;
 		case "log_locked":
 			text_engine("locked.",1,"beebo","neutral");
 			cutscene_event("step");

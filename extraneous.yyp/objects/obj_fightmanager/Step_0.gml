@@ -29,6 +29,7 @@ switch global.fightingState{
 		}
 	break;
 	case 5:
+		obj_cameraManager.gliding=8;
 		if turn=teamCount-1{
 			switch playerAct{
 				case "attack":
@@ -67,7 +68,7 @@ switch global.fightingState{
 		obj_cameraManager.gliding=6;
 	break;
 	case 7:
-		obj_cameraManager.gliding=9;
+		obj_cameraManager.gliding=10;
 	break;
 			
 }

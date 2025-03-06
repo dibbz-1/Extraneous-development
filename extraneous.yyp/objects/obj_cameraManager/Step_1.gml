@@ -24,7 +24,7 @@ switch gliding{
 			xPos=x
 			yPos=y
 		}
-		cam_glide(obj_ajohn_npc.x,obj_ajohn_npc.y,CAM_WIDTH/2,CAM_HEIGHT/2,10);
+		cam_glide(obj_ajohn.x,obj_ajohn.y,CAM_WIDTH/2,CAM_HEIGHT/2,10);
 	break;
 	
 	case 4:
@@ -69,6 +69,10 @@ switch gliding{
 	case 9:
 		focus="global";
 		cam_glide(185,110,CAM_WIDTH/1.5,CAM_HEIGHT/1.5,10);
+	break;
+	case 10:
+		focus="global";
+		cam_glide(210,130,CAM_WIDTH/1.5,CAM_HEIGHT/1.5,10);
 	break;
 	
 }

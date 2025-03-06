@@ -32,3 +32,5 @@ global.fightingState=0;
 6 - fight default
 7 - enemy focus
 8 - fight player turn
+9 - player dodge
+10 - both player dodge

@@ -1,10 +1,10 @@
 {
   "FolderOrderSettings":[
-    {"name":"Graphics","order":19,"path":"folders/Graphics.yy",},
     {"name":"Animation Curves","order":11,"path":"folders/Animation Curves.yy",},
     {"name":"dialogue system","order":15,"path":"folders/dialogue system.yy",},
     {"name":"Extensions","order":13,"path":"folders/Extensions.yy",},
     {"name":"Fonts","order":6,"path":"folders/Fonts.yy",},
+    {"name":"Graphics","order":19,"path":"folders/Graphics.yy",},
     {"name":"Icons","order":16,"path":"folders/Icons.yy",},
     {"name":"Music","order":18,"path":"folders/Music.yy",},
     {"name":"Notes","order":12,"path":"folders/Notes.yy",},
@@ -28,7 +28,7 @@
     {"name":"gpx_hitPower","order":2,"path":"objects/gpx_hitPower/gpx_hitPower.yy",},
     {"name":"gpx_spamPrompt","order":1,"path":"objects/gpx_spamPrompt/gpx_spamPrompt.yy",},
     {"name":"NPC_TEMPLATE","order":5,"path":"objects/NPC_TEMPLATE/NPC_TEMPLATE.yy",},
-    {"name":"obj_ajohn_npc","order":7,"path":"objects/obj_ajohn_npc/obj_ajohn_npc.yy",},
+    {"name":"obj_ajohn","order":7,"path":"objects/obj_ajohn/obj_ajohn.yy",},
     {"name":"obj_bannerAjohn","order":20,"path":"objects/obj_bannerAjohn/obj_bannerAjohn.yy",},
     {"name":"obj_bannerBeebo","order":19,"path":"objects/obj_bannerBeebo/obj_bannerBeebo.yy",},
     {"name":"obj_bannerEnemy","order":22,"path":"objects/obj_bannerEnemy/obj_bannerEnemy.yy",},
@@ -76,6 +76,7 @@
     {"name":"ico_fight","order":2,"path":"sprites/ico_fight/ico_fight.yy",},
     {"name":"ico_txtbx","order":3,"path":"sprites/ico_txtbx/ico_txtbx.yy",},
     {"name":"spr_ajohnbattlenormal","order":14,"path":"sprites/spr_ajohnbattlenormal/spr_ajohnbattlenormal.yy",},
+    {"name":"spr_ajohnFight","order":45,"path":"sprites/spr_ajohnFight/spr_ajohnFight.yy",},
     {"name":"spr_ajohnIdle","order":7,"path":"sprites/spr_ajohnIdle/spr_ajohnIdle.yy",},
     {"name":"spr_ajohnportneut","order":11,"path":"sprites/spr_ajohnportneut/spr_ajohnportneut.yy",},
     {"name":"spr_bannerAjohn","order":27,"path":"sprites/spr_bannerAjohn/spr_bannerAjohn.yy",},
