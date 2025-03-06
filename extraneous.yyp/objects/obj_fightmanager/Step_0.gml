@@ -18,28 +18,56 @@ switch global.fightingState{
 		if confirm{
 			global.fightingState++;
 			obj_cameraManager.gliding=8;
-			create_text("player turn");
+			switch turn{
+				case 0:
+					create_text("player turn");
+				break;
+				case 1:
+					create_text("ajohn turn");
+				break;
+			}
 		}
 	break;
 	case 5:
-		switch playerAct{
-			case "attack":
-				obj_cameraManager.gliding=2;
-				if !tut{
-					if !spawned{ 
-						instance_create_depth(0,0,obj_player.depth-1,gpx_spamPrompt); 
-						spawned=true;
+		if turn=teamCount-1{
+			switch playerAct{
+				case "attack":
+					obj_cameraManager.gliding=2;
+					if tut{
+						if !spawned{ 
+							instance_create_depth(0,0,obj_player.depth-1,gpx_spamPrompt); 
+							spawned=true;
+						}
+						else if !instance_exists(gpx_spamPrompt){ 
+							tut=false; 
+							spawned=false; 
+						}
 					}
-					else if !instance_exists(gpx_spamPrompt){ 
-						tut=true; 
-						spawned=false; 
-						show_debug_message("boi");
+					else{
+						if !spawned instance_create_depth(0,0,obj_player.depth-1,obj_quicktime); spawned=true;
 					}
-				}
-				else{
-					if !spawned instance_create_depth(0,0,obj_player.depth-1,obj_quicktime); spawned=true;
-				}
-				
+				break;
+			}
+		} else{
+			turn++
+			global.fightingState=4;
+			switch turn{
+				case 0:
+					create_text("player turn");
+				break;
+				case 1:
+					create_text("ajohn turn");
+				break;
+			}
 		}
 	break;
+	case 6:
+		turn=0;
+		spawned=false;
+		obj_cameraManager.gliding=6;
+	break;
+	case 7:
+		obj_cameraManager.gliding=9;
+	break;
+			
 }

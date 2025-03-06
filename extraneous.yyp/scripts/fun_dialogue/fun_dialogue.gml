@@ -47,19 +47,34 @@ function text_id_is(_textid){
 			text_engine("You are met with a foe of unknown power.", 1);
 		break;
 		case ("player turn"):
-			text_engine("What would you like to do?", 1, "top");
+			text_engine("What would you like Beebo to do?", 1, "top");
 			scr_option("attack","fight.attack");
 			scr_option("item","fight.item");
 			scr_option("skill","fight.skill");
 			scr_option("skip","fight.skip");
 			cutscene_event("step");
 		break;
+		case ("ajohn turn"):
+			text_engine("What would you like Ajohn to do?", 1, "top");
+			scr_option("attack","afight.attack");
+			scr_option("item","afight.item");
+			scr_option("skill","afight.skill");
+			scr_option("skip","afight.skip");
+			cutscene_event("step");
+		break;
 		case "fight.attack":
 			obj_fightmanager.playerAct="attack";
 			text_engine("you attacked!", 1, "top");
 			cutscene_event("fight step");
+		break;
+		case "afight.attack":
+			obj_fightmanager.ajohnAct="attack";
+			text_engine("you attacked!", 1, "top");
+			cutscene_event("fight step");
+		break;
 		case "log_locked":
 			text_engine("locked.",1,"beebo","neutral");
+			cutscene_event("step");
 		break;
 	}	
 

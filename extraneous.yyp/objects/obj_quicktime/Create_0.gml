@@ -7,3 +7,4 @@ image_speed=0
 alarm[0]=2
 attacking=false
 counter=0;
+hitPitch=1;

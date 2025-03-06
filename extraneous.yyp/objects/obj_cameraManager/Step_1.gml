@@ -41,7 +41,7 @@ switch gliding{
 		focus="global";
 		
 		global.plrMove=false;
-		cam_glide(obj_player.x,obj_player.y-10,CAM_WIDTH/3,CAM_HEIGHT/3,8);
+		cam_glide(obj_player.x,obj_player.y,CAM_WIDTH/3,CAM_HEIGHT/3,8);
 		//start fight
 		if round(width)=CAM_WIDTH/3 && !zoomFinished{
 			fadeToRoom(rm_fight, 5, c_black, 185, 110, global.enemy);
@@ -64,6 +64,11 @@ switch gliding{
 	case 8:
 		focus="global";
 		cam_glide(245,110,CAM_WIDTH/1.2,CAM_HEIGHT/1.2,10);
+	break;
+	
+	case 9:
+		focus="global";
+		cam_glide(185,110,CAM_WIDTH/1.5,CAM_HEIGHT/1.5,10);
 	break;
 	
 }

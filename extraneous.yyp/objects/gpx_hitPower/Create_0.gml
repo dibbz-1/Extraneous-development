@@ -1,6 +1,13 @@
-var power=obj_fightmanager.playerAttPwr;
+var pwr=obj_fightmanager.playerAttPwr;
 
-if power>700 sprite_index=spr_crit;
-else if power>300 sprite_index=spr_great;
-else if power>100 sprite_index=spr_ok;
+if pwr>80 sprite_index=spr_crit;
+else if pwr>50 sprite_index=spr_great;
+else if pwr>20 sprite_index=spr_ok;
 else sprite_index=spr_weak;
+
+image_xscale=0.5;
+image_yscale=0.5;
+
+x=obj_player.x;
+y=0;
+gliding=0;
