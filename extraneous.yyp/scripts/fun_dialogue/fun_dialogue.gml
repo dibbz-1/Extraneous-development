@@ -1,7 +1,7 @@
 // boy do I love storing all of my dialogue on one file. like what the hell else am I supposed to do though?
 
 function text_id_is(_textid){
-	
+	var fight = obj_fightmanager;
 	switch(_textid){
 		
 		case "log0":
@@ -57,23 +57,23 @@ function text_id_is(_textid){
 		case ("ajohn turn"):
 			text_engine("What would you like Ajohn to do?", 1, "top");
 			scr_option("attack","afight.attack");
-			scr_option("item","afight.item");
+			scr_option("item","fight.item");
 			scr_option("skill","afight.skill");
 			scr_option("skip","afight.skip");
 			cutscene_event("step");
 		break;
 		case "fight.attack":
-			obj_fightmanager.playerAct="attack";
+			fight.playerAct="attack";
 			text_engine("you attacked!", 1, "top");
 			cutscene_event("fight step");
 		break;
 		case "afight.attack":
-			obj_fightmanager.ajohnAct="attack";
+			fight.ajohnAct="attack";
 			text_engine("you attacked!", 1, "top");
 			cutscene_event("fight step");
 		break;
 		case "fight.item":
-			obj_fightmanager.playerAct="item";
+			fight.playerAct="item";
 			text_engine("which item would you like to use?", 1, "top");
 			for (var i=0; i<array_length(global.items); i++){
 				scr_option(global.items[i],global.items[i]);
@@ -82,6 +82,9 @@ function text_id_is(_textid){
 		break;
 		case "promethazine":
 			text_engine("I can't put down the cup.",0.5,"beebo");
+			text_engine("Beebo regained 20 HP!",0.5,"top");
+			fight.beebo_hp+=20 ;
+			if fight.beebo_hp>fight.beebo_maxhp fight.beebo_hp-=(fight.beebo_hp-fight.beebo_maxhp);
 			cutscene_event("fight step");
 		break;
 		case "log_locked":

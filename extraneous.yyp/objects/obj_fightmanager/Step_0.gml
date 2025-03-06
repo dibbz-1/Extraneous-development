@@ -48,6 +48,9 @@ switch global.fightingState{
 						if !spawned instance_create_depth(0,0,obj_player.depth-1,obj_quicktime); spawned=true;
 					}
 				break;
+				default:
+					global.fightingState++;
+				break;
 			}
 		} else{
 			turn++

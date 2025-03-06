@@ -22,6 +22,7 @@ textxl = 55;
 enemy_hp = 100;
 
 beebo_hp = 100;
+beebo_maxhp = 100;
 
 ajohn_hp = 100;
 
