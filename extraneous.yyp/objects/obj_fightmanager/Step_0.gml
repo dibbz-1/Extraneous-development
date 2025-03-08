@@ -18,6 +18,7 @@ switch global.fightingState{
 		if confirm{
 			global.fightingState++;
 			obj_cameraManager.gliding=8;
+			currentTurn=turn
 			switch turn{
 				case 0:
 					create_text("player turn");
@@ -31,28 +32,60 @@ switch global.fightingState{
 	case 5:
 		obj_cameraManager.gliding=8;
 		if turn=teamCount-1{
-			switch playerAct{
-				case "attack":
-					obj_cameraManager.gliding=2;
-					if tut{
-						if !spawned{ 
-							instance_create_depth(0,0,obj_player.depth-1,gpx_spamPrompt); 
-							spawned=true;
+			if currentTurn==0{
+				switch playerAct{
+					case "attack":
+						obj_cameraManager.gliding=2;
+						if tut{
+							if !spawned{ 
+								var inst=instance_create_depth(0,0,obj_player.depth-1,gpx_spamPrompt); 
+								with inst targ=obj_player;
+								spawned=true;
+							}
+							else if !instance_exists(gpx_spamPrompt){ 
+								tut=false; 
+								spawned=false; 
+							}
 						}
-						else if !instance_exists(gpx_spamPrompt){ 
-							tut=false; 
-							spawned=false; 
+						else{
+							if !spawned{
+								var inst = instance_create_depth(0,0,obj_player.depth-1,obj_quicktime); 
+								with inst targ=obj_player;
+								spawned=true;
+							}
 						}
-					}
-					else{
-						if !spawned instance_create_depth(0,0,obj_player.depth-1,obj_quicktime); spawned=true;
-					}
-				break;
-				default:
-					switch ajohnAct{
-						
-					}
-				break;
+					break;
+					default:
+						currentTurn++
+					break;
+				}
+			} else{
+				switch ajohnAct{
+					case "attack":
+						obj_cameraManager.gliding=3;
+						if tut{
+							if !spawned{ 
+								var inst=instance_create_depth(0,0,obj_ajohn.depth-1,gpx_spamPrompt); 
+								with inst targ=obj_ajohn;
+								spawned=true;
+							}
+							else if !instance_exists(gpx_spamPrompt){ 
+								tut=false; 
+								spawned=false; 
+							}
+						}
+						else{
+							if !spawned{
+								var inst = instance_create_depth(0,0,obj_ajohn.depth-1,obj_quicktime); 
+								with inst targ=obj_ajohn;
+								spawned=true;
+							}
+						}
+					break;
+					default:
+						global.fightingState++
+					break;
+				}
 			}
 		} else{
 			turn++
@@ -68,11 +101,11 @@ switch global.fightingState{
 		}
 	break;
 	case 6:
-		turn=0;
 		spawned=false;
 		obj_cameraManager.gliding=6;
 	break;
 	case 7:
+		turn=0;
 		obj_cameraManager.gliding=10;
 	break;
 			

@@ -1,6 +1,7 @@
 var keyZ = keyboard_check_pressed(ord("Z"));
 var keyX = keyboard_check_pressed(ord("X"));
 
+var fight=obj_fightmanager
 if gliding=0 glide_sin(x,obj_player.y-40,5)
 else{
 	glide_sin(x,-10,5);
@@ -11,8 +12,8 @@ if attacking{
 	counter+=0.1;
 	if counter==100{
 		attacking=false; 
-		obj_fightmanager.playerAttPwr=0;
-		instance_create_depth(0,0,depth-1,gpx_hitPower);
+		fight.playerAttPwr=0;
+		global.fightingState++;
 	}
 	if image_xscale>0.2{
 		image_xscale-=0.007; 
@@ -20,8 +21,12 @@ if attacking{
 	}
 	if hitPitch=1.7{
 		attacking=false; 
-		obj_fightmanager.playerAttPwr=200/counter;
-		instance_create_depth(0,0,depth-1,gpx_hitPower);
+		fight.playerAttPwr=200/counter;
+		var inst=instance_create_depth(0,0,depth-1,gpx_hitPower);
+		with inst{
+			if fight.currentTurn==0 targ=obj_player;
+			else targ=obj_ajohn;
+		}
 	}
 	if sprite_index==spr_quicktimeZ{
 		if keyZ{

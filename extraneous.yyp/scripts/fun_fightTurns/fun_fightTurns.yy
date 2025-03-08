@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"fun_fightTurns",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"fun_fightTurns",
+  "parent":{
+    "name":"Scripts",
+    "path":"folders/Scripts.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

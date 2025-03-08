@@ -20,7 +20,7 @@ if global.fightingState==7{
 		obj_fightmanager.ajohn_hp-=10;
 	}
 	if !(x+xSpd>300 or x+xSpd<160) x+=xSpd;
-}
+} else sprite_index=spr_ajohnIdle;
 
 
 

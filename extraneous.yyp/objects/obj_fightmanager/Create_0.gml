@@ -10,17 +10,13 @@ alarm[0] = frames_s;
 alarm[1] = 30;
 char_size = 2;
 turn=0;
+instance=noone;
 
-portrait_background = spr_bannerbeebo;
-portrait_width = 150/sprite_get_width(portrait_background);
-portrait_height = 230/sprite_get_height(portrait_background);
-health_fill = spr_specialbar_fill;
-health_border = spr_specialbarborder;
 color = c_white;
 textxl = 55;
 
 enemy_hp = 100;
-enemy_maxhp = 100;
+enemy_maxhp = 200;
 
 beebo_hp = 100;
 beebo_maxhp = 100;
@@ -34,7 +30,7 @@ playerAttPwr=0;
 ajohnAct="";
 ajohnAttPwr=0;
 
-tut=true;
+tut=false;
 spawned=false;
 
 teamCount=2;

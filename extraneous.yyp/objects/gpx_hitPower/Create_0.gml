@@ -1,3 +1,4 @@
+targ=obj_player;
 var pwr=obj_fightmanager.playerAttPwr;
 
 if pwr>80 sprite_index=spr_crit;
@@ -8,6 +9,6 @@ else sprite_index=spr_weak;
 image_xscale=0.5;
 image_yscale=0.5;
 
-x=obj_player.x;
+x=targ.x;
 y=0;
 gliding=0;
