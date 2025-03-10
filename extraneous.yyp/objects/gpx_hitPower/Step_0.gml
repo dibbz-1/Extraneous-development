@@ -1,6 +1,6 @@
 switch gliding{
 	case 0:
-		glide_sin(x,targ.y,5);
+		glide_sin(targ.x,targ.y,5);
 		if round(y)==targ.y gliding++;
 	break;
 	case 1:
@@ -8,7 +8,7 @@ switch gliding{
 		
 	break;
 	case 3:
-		glide_sin(x,-10,5);
+		glide_sin(targ.x,-10,5);
 		if y<0 {
 			global.fightingState++;
 			instance_destroy();

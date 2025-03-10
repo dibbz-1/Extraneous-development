@@ -60,7 +60,8 @@ function text_id_is(_textid){
 		break;
 		case "fight.attack":
 			fight.playerAct="attack";
-			text_engine("Beebo will attack", 1, "top");
+			text_engine("Which enemy?", 1, "top");
+			enemy_select();
 			cutscene_event("fight step");
 		break;
 		case "afight.attack":
@@ -80,13 +81,17 @@ function text_id_is(_textid){
 			if fight.turn==0{
 				text_engine("I can't put down the cup.",0.5,"beebo");
 				text_engine("Beebo regained 20 HP!",0.5,"top");
-				fight.beebo_hp+=20 ;
-				if fight.beebo_hp>fight.beebo_maxhp fight.beebo_hp-=(fight.beebo_hp-fight.beebo_maxhp);
+				with fight{
+					beebo_hp+=20;
+					if (beebo_hp>beebo_maxhp) beebo_hp-=(beebo_hp-beebo_maxhp);
+				}
 			} else if fight.turn==1{
 				text_engine("I can't put down the cup.",0.5,"ajohn");
 				text_engine("Ajohn regained 20 HP!",0.5,"top");
-				fight.ajohn_hp+=20 ;
-				if fight.ajohn_hp>fight.ajohn_maxhp fight.ajohn_hp-=(fight.ajohn_hp-fight.ajohn_maxhp);
+				with fight{
+					ajohn_hp+=20 ;
+					if (ajohn_hp>ajohn_maxhp) ajohn_hp-=(ajohn_hp-ajohn_maxhp);
+				}
 			}
 				
 			cutscene_event("fight step");

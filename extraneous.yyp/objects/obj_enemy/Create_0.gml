@@ -1,4 +1,3 @@
-sprite_index=global.enemy;
 alarmStarted=false;
 bounceIntensity=0;
 bounce=0;

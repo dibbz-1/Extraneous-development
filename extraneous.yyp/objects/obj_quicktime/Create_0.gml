@@ -1,4 +1,5 @@
-x=obj_player.x;
+targ=obj_player;
+x=targ.x;
 y=0;
 gliding=0;
 image_xscale=0.2;

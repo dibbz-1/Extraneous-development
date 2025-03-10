@@ -2,9 +2,9 @@ var keyZ = keyboard_check_pressed(ord("Z"));
 var keyX = keyboard_check_pressed(ord("X"));
 
 var fight=obj_fightmanager
-if gliding=0 glide_sin(x,obj_player.y-40,5)
+if gliding=0 glide_sin(targ.x,targ.y-40,5)
 else{
-	glide_sin(x,-10,5);
+	glide_sin(targ.x,-10,5);
 	if y<0 instance_destroy();
 }
 

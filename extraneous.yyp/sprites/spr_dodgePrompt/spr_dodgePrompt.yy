@@ -23,7 +23,7 @@
   ],
   "name":"spr_dodgePrompt",
   "nineSlice":null,
-  "origin":4,
+  "origin":9,
   "parent":{
     "name":"Sprites",
     "path":"folders/Sprites.yy",
@@ -75,7 +75,7 @@
     ],
     "visibleRange":null,
     "volume":1.0,
-    "xorigin":75,
+    "xorigin":84,
     "yorigin":50,
   },
   "swatchColours":null,

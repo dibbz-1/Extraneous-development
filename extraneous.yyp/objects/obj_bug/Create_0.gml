@@ -4,4 +4,4 @@ state=0;
 counter=0;
 dir=1;
 mvFreq=10;
-iam=spr_bug;
+show_debug_message(iam);

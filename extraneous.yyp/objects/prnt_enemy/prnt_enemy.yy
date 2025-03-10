@@ -33,7 +33,7 @@
     {"$GMObjectProperty":"v1","%Name":"iam","filters":[],"listItems":[
         "spr_bug",
         "spr_wurmie",
-      ],"multiselect":true,"name":"iam","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"spr_wurmie","varType":6,},
+      ],"multiselect":true,"name":"iam","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"","varType":6,},
   ],
   "resourceType":"GMObject",
   "resourceVersion":"2.0",

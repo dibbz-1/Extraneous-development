@@ -4,4 +4,4 @@ state=0;
 counter=0;
 dir=1;
 mvFreq=7;
-iam=spr_wurmie;
+iam=noone;
