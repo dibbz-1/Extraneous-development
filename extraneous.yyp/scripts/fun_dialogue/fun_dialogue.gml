@@ -61,13 +61,19 @@ function text_id_is(_textid){
 		case "fight.attack":
 			fight.playerAct="attack";
 			text_engine("Which enemy?", 1, "top");
-			enemy_select();
-			cutscene_event("fight step");
+			for (var i=0; i<array_length(global.enemy); i++){
+				scr_option(global.enemy[i],global.enemy[i]);
+				show_debug_message(global.enemy[i]);
+			}
+			cutscene_event("step");
 		break;
 		case "afight.attack":
 			fight.ajohnAct="attack";
-			text_engine("Ajohn will attack", 1, "top");
-			cutscene_event("fight step");
+			text_engine("Which enemy?", 1, "top");
+			for (var i=0; i<array_length(global.enemy); i++){
+				scr_option(global.enemy[i],global.enemy[i]);
+			}
+			cutscene_event("step");
 		break;
 		case "fight.item":
 			fight.playerAct="item";
@@ -99,6 +105,17 @@ function text_id_is(_textid){
 		case "log_locked":
 			text_engine("locked.",1,"beebo","neutral");
 			cutscene_event("step");
+		break;
+		
+		case "bug":
+			if fight.turn==0 fight.beeboTarg="bug";
+			else if fight.turn==1 fight.ajohnTarg="bug";
+			cutscene_event("fight step");
+		break;
+		case "worm":
+			if fight.turn==0 fight.beeboTarg="worm";
+			else if fight.turn==1 fight.ajohnTarg="worm";
+			cutscene_event("fight step")
 		break;
 	}	
 

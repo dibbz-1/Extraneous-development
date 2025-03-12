@@ -31,9 +31,9 @@
   "physicsStartAwake":true,
   "properties":[
     {"$GMObjectProperty":"v1","%Name":"iam","filters":[],"listItems":[
-        "spr_bug",
-        "spr_wurmie",
-      ],"multiselect":true,"name":"iam","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"","varType":6,},
+        "\"bug\"",
+        "\"worm\"",
+      ],"multiselect":true,"name":"iam","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"[\"bug\"]","varType":4,},
   ],
   "resourceType":"GMObject",
   "resourceVersion":"2.0",

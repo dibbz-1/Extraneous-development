@@ -1,11 +1,23 @@
 if global.fightingState==6{
 	if !alarmStarted{
-		alarm[0]=30; 
 		alarmStarted=true; 
 		bounceIntensity=obj_fightmanager.playerAttPwr/5;
 		obj_fightmanager.enemy_hp-=obj_fightmanager.playerAttPwr
 		bounce=bounceIntensity;
 		first=true;
+		if sprite_index==spr_bug{
+			if obj_fightmanager.beeboTarg=="bug"&&obj_fightmanager.currentTurn==0 or obj_fightmanager.ajohnTarg=="bug"&&obj_fightmanager.currentTurn==1 
+			{
+				alarm[0]=30;
+			}
+		}
+		else if sprite_index=spr_wurmie{
+			if obj_fightmanager.beeboTarg=="worm"&&obj_fightmanager.currentTurn==0 or obj_fightmanager.ajohnTarg=="worm"&&obj_fightmanager.currentTurn==1 
+			{
+				alarm[0]=30;
+			}
+		}
+		
 	}
 } else if global.fightingState==7
 	switch sprite_index{

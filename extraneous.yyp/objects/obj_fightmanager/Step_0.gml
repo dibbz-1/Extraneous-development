@@ -30,7 +30,7 @@ switch global.fightingState{
 		}
 	break;
 	case 4:
-		
+	break;
 	case 5:
 		obj_cameraManager.gliding=8;
 		if turn=teamCount-1{

@@ -86,8 +86,9 @@ if event[page]==""
 					
 				} else if page==page_number-1{
 					if (option_pos >= 0){
+						show_debug_message(option_link_id[option_pos]);
+						show_debug_message("mustarrrrrrrrd HAHAHA")
 						create_text(option_link_id[option_pos]);
-						
 					}
 					instance_destroy();
 				}
@@ -95,8 +96,9 @@ if event[page]==""
 			} else {
 				global.cutStep++;
 				if (option_pos >= 0){
+					show_debug_message(option_link_id[option_pos]);
+					show_debug_message("mustarrrrrrrrd HAHAHA");
 					create_text(option_link_id[option_pos]);
-					
 				}
 				instance_destroy();
 			}
