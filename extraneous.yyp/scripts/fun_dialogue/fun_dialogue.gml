@@ -113,6 +113,7 @@ function text_id_is(_textid){
 			cutscene_event("fight step");
 		break;
 		case "worm":
+			show_debug_message("sill")
 			if fight.turn==0 fight.beeboTarg="worm";
 			else if fight.turn==1 fight.ajohnTarg="worm";
 			cutscene_event("fight step")

@@ -1,12 +1,12 @@
 {
   "$GMObject":"",
-  "%Name":"obj_enemyBulletTest",
+  "%Name":"obj_bugBullet",
   "eventList":[
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"obj_enemyBulletTest",
+  "name":"obj_bugBullet",
   "overriddenProperties":[],
   "parent":{
     "name":"Objects",
@@ -31,8 +31,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_enemyBulletTest",
-    "path":"sprites/spr_enemyBulletTest/spr_enemyBulletTest.yy",
+    "name":"spr_bulletWhite",
+    "path":"sprites/spr_bulletWhite/spr_bulletWhite.yy",
   },
   "spriteMaskId":null,
   "visible":true,

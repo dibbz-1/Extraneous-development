@@ -6,22 +6,25 @@ for(var i=0;i<array_length(global.enemy);i++){
 		case 0:
 			var enemyA = instance_create_depth(295,164,0,obj_enemy);
 			with enemyA{
-				if global.enemy[i]="bug"sprite_index=spr_bug; pos=i;
-				if global.enemy[i]="worm"sprite_index=spr_wurmie; pos=i;
+				enemy=global.enemy[i];
+				if enemy=="bug"sprite_index=spr_bug; pos=i; 
+				if enemy=="worm"sprite_index=spr_wurmie; pos=i;
 			}
 		break;
 		case 1:
 			var enemyB = instance_create_depth(270,144,0,obj_enemy);
 			with enemyB{
-				if global.enemy[i]="bug"sprite_index=spr_bug; pos=i;
-				if global.enemy[i]="worm"sprite_index=spr_wurmie; pos=i;
+				enemy=global.enemy[i];
+				if enemy=="bug"sprite_index=spr_bug; pos=i;
+				if enemy=="worm"sprite_index=spr_wurmie; pos=i;
 			}
 		break;
 		case 2:
 			var enemyC = instance_create_depth(295,184,0,obj_enemy);
 			with enemyC{
-				if global.enemy[i]="bug"sprite_index=spr_bug; pos=i;
-				if global.enemy[i]="worm"sprite_index=spr_wurmie; pos=i;
+				enemy=global.enemy[i];
+				if enemy=="bug"sprite_index=spr_bug; pos=i;
+				if enemy=="worm"sprite_index=spr_wurmie; pos=i;
 			}
 		break;
 	}

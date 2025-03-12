@@ -1,33 +1,44 @@
+var fight = obj_fightmanager;
 if global.fightingState==6{
 	if !alarmStarted{
+		show_debug_message(enemy);
 		alarmStarted=true; 
-		bounceIntensity=obj_fightmanager.playerAttPwr/5;
-		obj_fightmanager.enemy_hp-=obj_fightmanager.playerAttPwr
+		bounceIntensity=fight.playerAttPwr/5;
+		fight.enemy_hp-=fight.playerAttPwr
 		bounce=bounceIntensity;
 		first=true;
-		if sprite_index==spr_bug{
-			if obj_fightmanager.beeboTarg=="bug"&&obj_fightmanager.currentTurn==0 or obj_fightmanager.ajohnTarg=="bug"&&obj_fightmanager.currentTurn==1 
-			{
-				alarm[0]=30;
-			}
-		}
-		else if sprite_index=spr_wurmie{
-			if obj_fightmanager.beeboTarg=="worm"&&obj_fightmanager.currentTurn==0 or obj_fightmanager.ajohnTarg=="worm"&&obj_fightmanager.currentTurn==1 
-			{
-				alarm[0]=30;
-			}
+		switch fight.currentTurn{
+			case 0:
+				if fight.beeboTarg=="bug"{
+					show_debug_message("target match")
+					if enemy=="bug" alarm[0]=30;
+				}
+				if fight.beeboTarg=="worm"{
+					show_debug_message("targ match")
+					if enemy=="worm" alarm[0]=30;
+				}
+			break;
+			case 1:
+				if fight.ajohnTarg=="bug"{
+					show_debug_message("targ match")
+					if enemy=="bug" alarm[0]=30;
+				}
+				if fight.ajohnTarg=="worm"{
+					show_debug_message("targ match")
+					if enemy=="worm" alarm[0]=30;
+				}
+			break;
+			
 		}
 		
 	}
-} else if global.fightingState==7
-	switch sprite_index{
-		case spr_bug:
+} else if global.fightingState==7 && !alarmStarted{
+	switch global.enemy[enemyTurn]{
+		case "bug":
 			if !tut{
-				if!alarmStarted{
-					alarm[3]=50
-					bullets=0;
-					alarmStarted=true;
-				}
+				alarm[3]=50
+				bullets=0;
+				alarmStarted=true;
 			} else {
 				if !spawned{
 					var inst = instance_create_depth(0,0,obj_player.depth-1,gpx_dodgePrompt);
@@ -39,7 +50,21 @@ if global.fightingState==6{
 				}
 			}
 		break;
-		case spr_wurmie:
-	
+		case "worm":
+			if !tut{
+				alarm[5]=50
+				bullets=0;
+				alarmStarted=true;
+			} else {
+				if !spawned{
+					var inst = instance_create_depth(0,0,obj_player.depth-1,gpx_dodgePrompt);
+					spawned=true;
+			}
+				if !instance_exists(gpx_dodgePrompt){
+					tut=false; 
+					spawned=false;
+				}
+			}
 		break;
+	}
 }
