@@ -1,8 +1,8 @@
 /// @description end attack
-if turn=enemyCount-1{
+if global.enemyTurn=enemyCount-1{
 	global.fightingState=3;
 } else{
-	enemyTurn++; 
+	global.enemyTurn++; 
 }
 alarmStarted=false;
 bullets=0;

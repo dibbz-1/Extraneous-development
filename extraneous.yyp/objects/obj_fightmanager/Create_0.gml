@@ -1,5 +1,6 @@
 //characters
 global.mus=audio_play_sound(mus_fight,1,1);
+global.enemyTurn=0;
 
 for(var i=0;i<array_length(global.enemy);i++){
 	switch i{

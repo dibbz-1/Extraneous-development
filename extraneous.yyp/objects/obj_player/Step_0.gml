@@ -34,7 +34,7 @@ if !instance_exists(obj_textbox) && !instance_exists(obj_rmTrans) && global.plrM
 } else if global.fightingState==7{
 	sprite_index=spr_beeboFight
 	xSpd = (rightKey - leftKey)*mvSpd;
-	if place_meeting(x,y,obj_bugBullet)&&!invincible{
+	if place_meeting(x,y,prnt_bullet)&&!invincible{
 		invincible=true;
 		image_alpha=0.5
 		alarm[1]=50

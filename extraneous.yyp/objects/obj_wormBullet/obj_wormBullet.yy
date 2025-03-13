@@ -12,7 +12,10 @@
     "name":"Objects",
     "path":"folders/Objects.yy",
   },
-  "parentObjectId":null,
+  "parentObjectId":{
+    "name":"prnt_bullet",
+    "path":"objects/prnt_bullet/prnt_bullet.yy",
+  },
   "persistent":false,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,
@@ -31,8 +34,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_bulletWhite",
-    "path":"sprites/spr_bulletWhite/spr_bulletWhite.yy",
+    "name":"spr_bulletBrown",
+    "path":"sprites/spr_bulletBrown/spr_bulletBrown.yy",
   },
   "spriteMaskId":null,
   "visible":true,

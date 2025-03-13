@@ -75,6 +75,7 @@
     {"id":{"name":"obj_rmTrans","path":"objects/obj_rmTrans/obj_rmTrans.yy",},},
     {"id":{"name":"obj_textbox","path":"objects/obj_textbox/obj_textbox.yy",},},
     {"id":{"name":"obj_wormBullet","path":"objects/obj_wormBullet/obj_wormBullet.yy",},},
+    {"id":{"name":"prnt_bullet","path":"objects/prnt_bullet/prnt_bullet.yy",},},
     {"id":{"name":"prnt_depthSorting","path":"objects/prnt_depthSorting/prnt_depthSorting.yy",},},
     {"id":{"name":"prnt_enemy","path":"objects/prnt_enemy/prnt_enemy.yy",},},
     {"id":{"name":"prnt_enemyFIght","path":"objects/prnt_enemyFIght/prnt_enemyFIght.yy",},},
