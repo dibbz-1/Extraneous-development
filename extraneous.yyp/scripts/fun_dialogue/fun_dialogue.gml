@@ -63,7 +63,6 @@ function text_id_is(_textid){
 			text_engine("Which enemy?", 1, "top");
 			for (var i=0; i<array_length(global.enemy); i++){
 				scr_option(global.enemy[i],global.enemy[i]);
-				show_debug_message(global.enemy[i]);
 			}
 			cutscene_event("step");
 		break;

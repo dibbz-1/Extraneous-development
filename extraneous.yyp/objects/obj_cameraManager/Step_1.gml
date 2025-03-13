@@ -58,7 +58,7 @@ switch gliding{
 	
 	case 7:
 		focus="global";
-		cam_glide(obj_enemy.x,obj_enemy.y,CAM_WIDTH/2,CAM_HEIGHT/2,10);
+		cam_glide(obj_enemyA.x,obj_enemyA.y,CAM_WIDTH/2,CAM_HEIGHT/2,10);
 	break;
 	
 	case 8:

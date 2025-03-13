@@ -4,7 +4,7 @@ global.mus=audio_play_sound(mus_fight,1,1);
 for(var i=0;i<array_length(global.enemy);i++){
 	switch i{
 		case 0:
-			var enemyA = instance_create_depth(295,164,0,obj_enemy);
+			var enemyA = instance_create_depth(295,164,0,obj_enemyA);
 			with enemyA{
 				enemy=global.enemy[i];
 				if enemy=="bug"sprite_index=spr_bug; pos=i; 
@@ -12,7 +12,7 @@ for(var i=0;i<array_length(global.enemy);i++){
 			}
 		break;
 		case 1:
-			var enemyB = instance_create_depth(270,144,0,obj_enemy);
+			var enemyB = instance_create_depth(270,144,0,obj_enemyB);
 			with enemyB{
 				enemy=global.enemy[i];
 				if enemy=="bug"sprite_index=spr_bug; pos=i;
@@ -20,7 +20,7 @@ for(var i=0;i<array_length(global.enemy);i++){
 			}
 		break;
 		case 2:
-			var enemyC = instance_create_depth(295,184,0,obj_enemy);
+			var enemyC = instance_create_depth(295,184,0,obj_enemyC);
 			with enemyC{
 				enemy=global.enemy[i];
 				if enemy=="bug"sprite_index=spr_bug; pos=i;
