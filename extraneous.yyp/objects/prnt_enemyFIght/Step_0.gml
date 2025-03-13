@@ -3,7 +3,13 @@ var fight = obj_fightmanager;
 if global.fightingState==6 && !alarmStarted{
 	alarmStarted=true; 
 	bounceIntensity=fight.playerAttPwr/5;
-	fight.enemy_hp-=fight.playerAttPwr/100
+	damage=fight.playerAttPwr
+	tAlpha=1;
+	randomize();
+	xBounce=irandom_range(-0.1,0.1);
+	yBounce=-4;
+	txtX=x;
+	txtY=y
 	bounce=bounceIntensity;
 	first=true;
 	if fight.beeboTarg==enemy && fight.currentTurn==0 alarm[0]=30;
