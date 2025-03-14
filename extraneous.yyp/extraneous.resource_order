@@ -126,6 +126,7 @@
     {"name":"spr_trans","order":6,"path":"sprites/spr_trans/spr_trans.yy",},
     {"name":"spr_two","order":31,"path":"sprites/spr_two/spr_two.yy",},
     {"name":"spr_txtbox","order":8,"path":"sprites/spr_txtbox/spr_txtbox.yy",},
+    {"name":"spr_warning","order":47,"path":"sprites/spr_warning/spr_warning.yy",},
     {"name":"spr_weak","order":36,"path":"sprites/spr_weak/spr_weak.yy",},
     {"name":"spr_wurmie","order":26,"path":"sprites/spr_wurmie/spr_wurmie.yy",},
     {"name":"Sprite45","order":40,"path":"sprites/Sprite45/Sprite45.yy",},

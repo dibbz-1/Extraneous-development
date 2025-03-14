@@ -155,6 +155,7 @@
     {"id":{"name":"spr_trans","path":"sprites/spr_trans/spr_trans.yy",},},
     {"id":{"name":"spr_two","path":"sprites/spr_two/spr_two.yy",},},
     {"id":{"name":"spr_txtbox","path":"sprites/spr_txtbox/spr_txtbox.yy",},},
+    {"id":{"name":"spr_warning","path":"sprites/spr_warning/spr_warning.yy",},},
     {"id":{"name":"spr_weak","path":"sprites/spr_weak/spr_weak.yy",},},
     {"id":{"name":"spr_wurmie","path":"sprites/spr_wurmie/spr_wurmie.yy",},},
     {"id":{"name":"Sprite45","path":"sprites/Sprite45/Sprite45.yy",},},

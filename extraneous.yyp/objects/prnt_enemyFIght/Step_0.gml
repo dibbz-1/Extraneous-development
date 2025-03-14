@@ -12,9 +12,10 @@ if global.fightingState==6 && !alarmStarted{
 	txtY=y
 	bounce=bounceIntensity;
 	first=true;
-	if fight.beeboTarg==enemy && fight.currentTurn==0 alarm[0]=30;
-	else if fight.ajohnTarg==enemy && fight.currentTurn==1 alarm[0]=30;
+	if fight.beeboTarg==enemy && fight.currentTurn==0 && fight.playerAct=="attack" alarm[0]=30;
+	else if fight.ajohnTarg==enemy && fight.currentTurn==1 && fight.ajohnAct=="attack" alarm[0]=30;
 	else alarmStarted=false;
+
 	
 	
 } else if global.fightingState==7 && !alarmStarted{

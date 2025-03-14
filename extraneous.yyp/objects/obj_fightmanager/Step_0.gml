@@ -85,7 +85,7 @@ switch global.fightingState{
 						}
 					break;
 					default:
-						global.fightingState++
+						global.fightingState=7;
 					break;
 				}
 			}

@@ -47,32 +47,30 @@ function text_id_is(_textid){
 			scr_option("attack","fight.attack");
 			scr_option("item","fight.item");
 			scr_option("skill","fight.skill");
-			scr_option("skip","fight.skip");
+			scr_option("defend","fight.defend");
 			cutscene_event("step");
 		break;
 		case ("ajohn turn"):
 			text_engine("Ajohn's turn", 1, "top");
-			scr_option("attack","afight.attack");
+			scr_option("attack","fight.attack");
 			scr_option("item","fight.item");
 			scr_option("skill","afight.skill");
-			scr_option("skip","afight.skip");
+			scr_option("defend","fight.defend");
 			cutscene_event("step");
 		break;
 		case "fight.attack":
-			fight.playerAct="attack";
+			if fight.turn==0 fight.playerAct="attack";
+			else if fight.turn==1 fight.ajohnAct="attack";
 			text_engine("Which enemy?", 1, "top");
 			for (var i=0; i<array_length(global.enemy); i++){
 				scr_option(global.enemy[i],global.enemy[i]);
 			}
 			cutscene_event("step");
 		break;
-		case "afight.attack":
-			fight.ajohnAct="attack";
-			text_engine("Which enemy?", 1, "top");
-			for (var i=0; i<array_length(global.enemy); i++){
-				scr_option(global.enemy[i],global.enemy[i]);
-			}
-			cutscene_event("step");
+		case "fight.defend":
+			if fight.turn==0 fight.playerAct="defend";
+			else if fight.turn==0 fight.ajohnAct="defend";
+			cutscene_event("fight step");
 		break;
 		case "fight.item":
 			fight.playerAct="item";
