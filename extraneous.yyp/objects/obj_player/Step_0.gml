@@ -43,3 +43,6 @@ if !instance_exists(obj_textbox) && !instance_exists(obj_rmTrans) && global.plrM
 	}
 	if !(x+xSpd>300 or x+xSpd<160) x+=xSpd;
 }
+
+//animation
+

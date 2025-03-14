@@ -36,8 +36,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_beepIdle",
-    "path":"sprites/spr_beepIdle/spr_beepIdle.yy",
+    "name":"spr_beebo_forward",
+    "path":"sprites/spr_beebo_forward/spr_beebo_forward.yy",
   },
   "spriteMaskId":null,
   "visible":true,
