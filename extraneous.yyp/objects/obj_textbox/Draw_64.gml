@@ -161,8 +161,17 @@ if event[page]==""
 			//draw_set_font(fnt_default_small);
 	 
 			//selection
-			option_pos += keyboard_check_pressed(vk_up) - keyboard_check_pressed(vk_down);
-			option_pos = clamp(option_pos, 0, option_number);
+			var top=array_length(option)-1
+			
+			if keyboard_check_pressed(vk_up){
+				if !option_pos==top option_pos++;
+				else /*option_pos=0;*/ show_debug_message(!option_pos==top)
+			}
+			if keyboard_check_pressed(vk_down){
+				if !option_pos==0 option_pos--
+				else option_pos=top;
+			}
+			
 	
 			var _opspace = 30; 
 			var _opborder = 4;

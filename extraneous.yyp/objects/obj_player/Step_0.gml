@@ -5,7 +5,7 @@ var upKey = keyboard_check(vk_up);
 var downKey = keyboard_check(vk_down);
 
 if !instance_exists(obj_textbox) && !instance_exists(obj_rmTrans) && global.plrMove{
-	sprite_index=spr_beepIdle;
+	
 	//var attackKey = keyboard_check_pressed(ord("C"));
 
 	//calculate X&Y
@@ -20,6 +20,25 @@ if !instance_exists(obj_textbox) && !instance_exists(obj_rmTrans) && global.plrM
 		ySpd=0;
 	}
 
+	if xSpd==0 && ySpd==0{
+		pressed=false
+		image_index=3; 
+		image_speed=0;
+	} else{
+		image_speed=1;
+		if !pressed{
+			image_index=0; 
+			pressed=true;
+		}
+	}
+
+	if ySpd<0 sprite_index=spr_beebo_backwards;
+	else if ySpd>0 sprite_index=spr_beebo_forward;
+	
+	if xSpd<0 sprite_index=spr_beebo_left;
+	else if xSpd>0 sprite_index=spr_beebo_right;
+
+
 	//execute movement
 	x+=xSpd;
 	y+=ySpd;
@@ -31,8 +50,10 @@ if !instance_exists(obj_textbox) && !instance_exists(obj_rmTrans) && global.plrM
 		
 
 	//depth sorting
-} else if global.fightingState==7{
-	sprite_index=spr_beeboFight
+} 
+else if global.fightingState==1 {image_speed=0;}
+else if global.fightingState>=2&&global.fightingState<7 {sprite_index=spr_beebo_fightStance; image_speed=1;}
+else if global.fightingState==7{
 	xSpd = (rightKey - leftKey)*mvSpd;
 	if place_meeting(x,y,prnt_bullet)&&!invincible{
 		invincible=true;
@@ -41,8 +62,21 @@ if !instance_exists(obj_textbox) && !instance_exists(obj_rmTrans) && global.plrM
 		audio_play_sound(snd_hit,1,0);
 		obj_fightmanager.beebo_hp-=10;
 	}
+	if xSpd<0 sprite_index=spr_beebo_left;
+	else if xSpd>0 sprite_index=spr_beebo_right;
+	
+	if xSpd==0{
+		pressed=false
+		image_index=3; 
+		image_speed=0;
+	} else{
+		image_speed=1;
+		if !pressed{
+			image_index=0; 
+			pressed=true;
+		}
+	}
 	if !(x+xSpd>300 or x+xSpd<160) x+=xSpd;
 }
 
 //animation
-
