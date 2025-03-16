@@ -62,6 +62,12 @@ if event[page]==""
 
 	//------------type
 	if draw_char < text_length[page]{
+		if string_copy(text[page],draw_char,1)=="."{
+			text_spd[page]=0; 
+			pause=true;
+			draw_char++;
+		}
+		
 		draw_char += text_spd[page];
 		draw_char = clamp(draw_char, 0, text_length[page])
 		type_sound(sound[page])
@@ -74,6 +80,7 @@ if event[page]==""
 	//-------page flip
 	
 	if _keyboard_accept{
+		if pause pause=false; text_spd[page]=0.5; 
 		
 		//if done typing
 		if draw_char == text_length[page]{

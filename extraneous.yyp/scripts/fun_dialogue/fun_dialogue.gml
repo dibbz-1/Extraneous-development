@@ -20,6 +20,7 @@ function text_id_is(_textid){
 		break;
 		case "no":
 			scn_ajohnTest.ajohnTrick=false;
+			text_engine("no thanks. I'm making the text longer, so that I, can test, the portrait.",0.5,"beebo");
 			text_engine("aww.",0.5,"ajohn");
 			cutscene_event("outside mus");
 			cutscene_event("step");

@@ -22,6 +22,7 @@ spawned=false;
 enemyCount=array_length(global.enemy);
 enemyTurn="";
 enemy = "";
+enemy_hp = 100;
 
 //drawing damage
 

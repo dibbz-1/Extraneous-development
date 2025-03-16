@@ -41,7 +41,7 @@ function text_engine(_text,_speed,_char=0,_emote = "neutral"){
 			sound[page_number]="bap";
 			switch _emote{
 				case "neutral":
-					portrait[page_number] = spr_beepportneut; 
+					portrait[page_number] = spr_beebo_pNeutral; 
 				break;
 			}
 				

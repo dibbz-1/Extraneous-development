@@ -23,6 +23,7 @@ print_fin = 1;
 sound[0] = "";
 char[0]="";
 event[0]="";
+pause=false;
 
 //portrait
 

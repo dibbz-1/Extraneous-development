@@ -1,4 +1,4 @@
-if !(print_fin == 1){
+if !(print_fin == 1 or pause){
 
 	sub++
 

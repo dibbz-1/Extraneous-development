@@ -4,7 +4,7 @@ if first{
 	first=false; 
 	hitSpawn=1;
 	show_debug_message(damage);
-	obj_fightmanager.enemy_hp-=damage;
+	enemy_hp-=damage;
 }
 x=_x+bounce;
 bounce-=bounceIntensity/10;
