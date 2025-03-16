@@ -47,6 +47,7 @@
     {"name":"obj_enemyC","order":27,"path":"objects/obj_enemyC/obj_enemyC.yy",},
     {"name":"obj_fightmanager","order":8,"path":"objects/obj_fightmanager/obj_fightmanager.yy",},
     {"name":"obj_fightTrans","order":12,"path":"objects/obj_fightTrans/obj_fightTrans.yy",},
+    {"name":"obj_gameManager","order":28,"path":"objects/obj_gameManager/obj_gameManager.yy",},
     {"name":"obj_ghost","order":9,"path":"objects/obj_ghost/obj_ghost.yy",},
     {"name":"obj_key","order":11,"path":"objects/obj_key/obj_key.yy",},
     {"name":"obj_player","order":1,"path":"objects/obj_player/obj_player.yy",},

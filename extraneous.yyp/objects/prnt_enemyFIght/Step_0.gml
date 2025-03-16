@@ -15,12 +15,11 @@ if global.fightingState==6 && !alarmStarted{
 	if fight.beeboTarg==enemy && fight.currentTurn==0 && fight.playerAct=="attack" alarm[0]=30;
 	else if fight.ajohnTarg==enemy && fight.currentTurn==1 && fight.ajohnAct=="attack" alarm[0]=30;
 	else alarmStarted=false;
-
-	
-	
 } else if global.fightingState==7 && !alarmStarted{
 	if global.enemy[global.enemyTurn]==enemy{
-		switch global.enemy[global.enemyTurn]{
+		if string_count("Bug",global.enemy[global.enemyTurn])>0 enemyTurn="bug"
+		if string_count("Worm",global.enemy[global.enemyTurn])>0 enemyTurn="worm"
+		switch enemyTurn{
 			case "bug":
 				if !tut{
 					alarm[3]=50

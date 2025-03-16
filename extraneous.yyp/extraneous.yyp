@@ -68,6 +68,7 @@
     {"id":{"name":"obj_enemyC","path":"objects/obj_enemyC/obj_enemyC.yy",},},
     {"id":{"name":"obj_fightmanager","path":"objects/obj_fightmanager/obj_fightmanager.yy",},},
     {"id":{"name":"obj_fightTrans","path":"objects/obj_fightTrans/obj_fightTrans.yy",},},
+    {"id":{"name":"obj_gameManager","path":"objects/obj_gameManager/obj_gameManager.yy",},},
     {"id":{"name":"obj_ghost","path":"objects/obj_ghost/obj_ghost.yy",},},
     {"id":{"name":"obj_key","path":"objects/obj_key/obj_key.yy",},},
     {"id":{"name":"obj_player","path":"objects/obj_player/obj_player.yy",},},

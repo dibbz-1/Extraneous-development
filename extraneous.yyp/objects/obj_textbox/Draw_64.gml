@@ -164,12 +164,12 @@ if event[page]==""
 			var top=array_length(option)-1
 			
 			if keyboard_check_pressed(vk_up){
-				if !option_pos==top option_pos++;
-				else /*option_pos=0;*/ show_debug_message(!option_pos==top)
+				option_pos++;
+				if option_pos>top option_pos=0; 
 			}
 			if keyboard_check_pressed(vk_down){
-				if !option_pos==0 option_pos--
-				else option_pos=top;
+				option_pos--
+				if option_pos<0 option_pos=top;
 			}
 			
 	

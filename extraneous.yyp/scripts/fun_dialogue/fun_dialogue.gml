@@ -104,15 +104,34 @@ function text_id_is(_textid){
 			cutscene_event("step");
 		break;
 		
-		case "bug":
-			if fight.turn==0 fight.beeboTarg="bug";
-			else if fight.turn==1 fight.ajohnTarg="bug";
+		case "Bug A":
+			if fight.turn==0 fight.beeboTarg="Bug A";
+			else if fight.turn==1 fight.ajohnTarg="Bug A";
 			cutscene_event("fight step");
 		break;
-		case "worm":
-			show_debug_message("sill")
-			if fight.turn==0 fight.beeboTarg="worm";
-			else if fight.turn==1 fight.ajohnTarg="worm";
+		case "Bug B":
+			if fight.turn==0 fight.beeboTarg="Bug B";
+			else if fight.turn==1 fight.ajohnTarg="Bug B";
+			cutscene_event("fight step");
+		break;
+		case "Bug C":
+			if fight.turn==0 fight.beeboTarg="Bug C";
+			else if fight.turn==1 fight.ajohnTarg="Bug C";
+			cutscene_event("fight step");
+		break;
+		case "Worm A":
+			if fight.turn==0 fight.beeboTarg="Worm A";
+			else if fight.turn==1 fight.ajohnTarg="Worm A";
+			cutscene_event("fight step")
+		break;
+		case "Worm B":
+			if fight.turn==0 fight.beeboTarg="Worm B";
+			else if fight.turn==1 fight.ajohnTarg="Worm B";
+			cutscene_event("fight step")
+		break;
+		case "Worm C":
+			if fight.turn==0 fight.beeboTarg="Worm C";
+			else if fight.turn==1 fight.ajohnTarg="Worm C";
 			cutscene_event("fight step")
 		break;
 	}	

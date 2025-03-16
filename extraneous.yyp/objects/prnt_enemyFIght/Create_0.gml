@@ -20,7 +20,7 @@ spawned=false;
 //enemy management
 
 enemyCount=array_length(global.enemy);
-enemyTurn=0;
+enemyTurn="";
 enemy = "";
 
 //drawing damage
