@@ -23,6 +23,7 @@ enemyCount=array_length(global.enemy);
 enemyTurn="";
 enemy = "";
 enemy_hp = 100;
+image_alpha = 1;
 
 //drawing damage
 

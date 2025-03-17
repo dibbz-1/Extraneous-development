@@ -1,5 +1,11 @@
 var fight = obj_fightmanager;
-
+if enemy_hp<0 image_alpha-=0.1
+if image_alpha==0 {
+	if instance_id == obj_enemyA instance_destroy(obj_bannerEnemyA); array_delete(global.enemy,1,1);
+	if instance_id == obj_enemyB instance_destroy(obj_bannerEnemyB); array_delete(global.enemy,2,1);
+	if instance_id == obj_enemyC instance_destroy(obj_bannerEnemyC); array_delete(global.enemy,3,1);
+	instance_destroy();
+}
 if global.fightingState==6 && !alarmStarted{
 	alarmStarted=true; 
 	bounceIntensity=fight.playerAttPwr/5;
@@ -15,6 +21,7 @@ if global.fightingState==6 && !alarmStarted{
 	if fight.beeboTarg==enemy && fight.currentTurn==0 && fight.playerAct=="attack" alarm[0]=30;
 	else if fight.ajohnTarg==enemy && fight.currentTurn==1 && fight.ajohnAct=="attack" alarm[0]=30;
 	else alarmStarted=false;
+
 } else if global.fightingState==7 && !alarmStarted{
 	if global.enemy[global.enemyTurn]==enemy{
 		if string_count("Bug",global.enemy[global.enemyTurn])>0 enemyTurn="bug"
