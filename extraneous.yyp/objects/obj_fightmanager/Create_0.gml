@@ -5,31 +5,33 @@ global.enemyTurn=0;
 for(var i=0;i<array_length(global.enemy);i++){
 	switch i{
 		case 0:
-			instance_create_depth(0,0,0,obj_bannerEnemyA);
+			
 			var enemyA = instance_create_depth(270,144,0,obj_enemyA);
 			with enemyA{
 				enemy=global.enemy[i];
 				if string_count("Bug",enemy)>0 sprite_index=spr_bug; pos=i; 
 				if string_count("Worm",enemy)>0 sprite_index=spr_wurmie; pos=i; 
 			}
+			instance_create_depth(0,0,0,obj_bannerEnemyA);
 		break;
 		case 1:
-			instance_create_depth(0,0,0,obj_bannerEnemyB);
+			
 			var enemyB = instance_create_depth(295,124,0,obj_enemyB);
 			with enemyB{
 				enemy=global.enemy[i];
 				if string_count("Bug",enemy)>0 sprite_index=spr_bug; pos=i; 
 				if string_count("Worm",enemy)>0 sprite_index=spr_wurmie; pos=i; 
 			}
+			instance_create_depth(0,0,0,obj_bannerEnemyB);
 		break;
 		case 2:
-			instance_create_depth(0,0,0,obj_bannerEnemyC);
 			var enemyC = instance_create_depth(295,164,0,obj_enemyC);
 			with enemyC{
 				enemy=global.enemy[i];
 				if string_count("Bug",enemy)>0 sprite_index=spr_bug; pos=i; 
 				if string_count("Worm",enemy)>0 sprite_index=spr_wurmie; pos=i; 
 			}
+			instance_create_depth(0,0,0,obj_bannerEnemyC);
 		break;
 	}
 }

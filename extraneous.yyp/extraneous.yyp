@@ -81,6 +81,7 @@
     {"id":{"name":"prnt_bullet","path":"objects/prnt_bullet/prnt_bullet.yy",},},
     {"id":{"name":"prnt_depthSorting","path":"objects/prnt_depthSorting/prnt_depthSorting.yy",},},
     {"id":{"name":"prnt_enemy","path":"objects/prnt_enemy/prnt_enemy.yy",},},
+    {"id":{"name":"prnt_enemyBanner","path":"objects/prnt_enemyBanner/prnt_enemyBanner.yy",},},
     {"id":{"name":"prnt_enemyFIght","path":"objects/prnt_enemyFIght/prnt_enemyFIght.yy",},},
     {"id":{"name":"prnt_tutorialPrompts","path":"objects/prnt_tutorialPrompts/prnt_tutorialPrompts.yy",},},
     {"id":{"name":"scn_ajohnTest","path":"objects/scn_ajohnTest/scn_ajohnTest.yy",},},

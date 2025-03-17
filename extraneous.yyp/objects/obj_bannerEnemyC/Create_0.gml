@@ -1,2 +1,2 @@
-_x=x;
-_y=y;
+inst=obj_enemyC;
+event_inherited();
