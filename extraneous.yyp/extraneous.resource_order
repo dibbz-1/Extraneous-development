@@ -59,6 +59,7 @@
     {"name":"obj_wormBullet","order":25,"path":"objects/obj_wormBullet/obj_wormBullet.yy",},
     {"name":"prnt_bullet","order":5,"path":"objects/prnt_bullet/prnt_bullet.yy",},
     {"name":"prnt_depthSorting","order":1,"path":"objects/prnt_depthSorting/prnt_depthSorting.yy",},
+    {"name":"prnt_enemyBanner","order":6,"path":"objects/prnt_enemyBanner/prnt_enemyBanner.yy",},
     {"name":"prnt_enemyFIght","order":4,"path":"objects/prnt_enemyFIght/prnt_enemyFIght.yy",},
     {"name":"prnt_tutorialPrompts","order":2,"path":"objects/prnt_tutorialPrompts/prnt_tutorialPrompts.yy",},
     {"name":"rm_fight","order":3,"path":"rooms/rm_fight/rm_fight.yy",},
