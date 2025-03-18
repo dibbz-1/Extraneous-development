@@ -1,14 +1,16 @@
-switch instance_id{
-	case obj_bannerEnemyA:
-	_y=100;
-	show_debug_message("instance a created");
+switch inst{
+	case obj_enemyB:
+	_y=117;
+
 	break;
-	case obj_bannerEnemyB:
-	_y=130;
-	show_debug_message("instance b created");
+	case obj_enemyA:
+	_y=137;
+
 	break;
-	case obj_bannerEnemyC:
-	_y=160;
-	show_debug_message("instance c created");
+	case obj_enemyC:
+	_y=157
+
 	break;
 }
+x=500
+y=_y
