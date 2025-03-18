@@ -20,8 +20,13 @@ function text_id_is(_textid){
 		break;
 		case "no":
 			scn_ajohnTest.ajohnTrick=false;
-			text_engine("no thanks. I'm making the text longer, so that I, can test, the portrait.",0.5,"beebo");
-			text_engine("aww.",0.5,"ajohn");
+			text_engine("No thanks. I'm kinda busy.",0.5,"beebo");
+			text_engine("Doing what?",0.5,"ajohn");
+			text_engine("Theres this bug I gotta fight.",0.5,"beebo");
+			text_engine("You mean that one? I wouldn't do that if I were you.",0.5,"ajohn");
+			text_engine("Why not?",0.5,"beebo","confused");
+			text_engine("You know what, go ahead.",0.5,"ajohn");
+			text_engine("I will. Ass hole.",0.5,"beebo","mad");
 			cutscene_event("outside mus");
 			cutscene_event("step");
 		break;

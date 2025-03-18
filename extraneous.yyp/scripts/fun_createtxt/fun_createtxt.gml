@@ -43,6 +43,15 @@ function text_engine(_text,_speed,_char=0,_emote = "neutral"){
 				case "neutral":
 					portrait[page_number] = spr_beebo_pNeutral; 
 				break;
+				case "happy":
+					portrait[page_number] = spr_beebo_pHappy; 
+				break;
+				case "mad":
+					portrait[page_number] = spr_beebo_pMad; 
+				break;
+				case "confused":
+					portrait[page_number] = spr_beebo_pConfused; 
+				break;
 			}
 				
 		break;

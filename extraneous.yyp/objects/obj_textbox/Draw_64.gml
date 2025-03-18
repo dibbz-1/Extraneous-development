@@ -62,7 +62,8 @@ if event[page]==""
 
 	//------------type
 	if draw_char < text_length[page]{
-		if string_copy(text[page],draw_char,1)=="."{
+		var currentChar = string_copy(text[page],draw_char,1);
+		if currentChar=="." or currentChar=="?" or currentChar=="-"{
 			text_spd[page]=0; 
 			pause=true;
 			draw_char++;
@@ -70,7 +71,7 @@ if event[page]==""
 		
 		draw_char += text_spd[page];
 		draw_char = clamp(draw_char, 0, text_length[page])
-		type_sound(sound[page])
+		if !pause type_sound(sound[page])
 		print_fin = false;
 	}
 
