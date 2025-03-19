@@ -5,3 +5,28 @@ function visible_in_viewport(_view){
 	else return false;
 }
 
+function array_delete_ext(array, pos)
+{
+    /// @func array_delete_ext(array, pos)
+    /// @arg array
+    /// @arg pos
+	
+	//courtesy of FoxyOfJungle on the gamemaker forums
+
+    var _array_lenght = array_length(array);
+    if (_array_lenght > 1)
+    {
+        var _array_new = array_create(_array_lenght - 1);
+        var j = 0;
+        for (var i=0; i<_array_lenght; i++)
+        {
+            if (i == pos)
+            {
+                continue;
+            }
+            _array_new[j] = array[i];
+            j += 1;
+        }
+        return _array_new;
+    }
+}

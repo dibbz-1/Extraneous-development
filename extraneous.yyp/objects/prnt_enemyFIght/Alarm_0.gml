@@ -7,7 +7,8 @@ if first{
 	enemy_hp-=damage;
 }
 if enemy_hp<=0{
-	alarm[2]=50;
+	alarm[2]=100;
+	global.enemyCount--;
 } else{
 	x=_x+bounce;
 	bounce-=bounceIntensity/10;

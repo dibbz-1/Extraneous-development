@@ -13,15 +13,6 @@ gliding=0;
 zoomFinished=false;
 //music management
 
-global.mus=audio_play_sound(mus_outside,1,1);
-
-
-//cutscene step
-global.cutStep=0;
-
-//fighting?
-global.fightingState=0;
-
 /* gliding cases
 
 1 - player focus moving

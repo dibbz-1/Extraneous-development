@@ -45,7 +45,9 @@ switch state{
 if place_meeting(x,y,obj_player)&&global.fightingState==0{
 	state=5;
 	//obj_fightmanager.instance=instance_id;
-	global.enemy=iam;
+	for(var i=0; i<array_length(iam); i++;){
+		global.enemy[i]=iam[i];
+	}
 	global.fightingState=1;	
 	instance_create_depth(0,0,0,gpx_fight);
 	audio_stop_all();

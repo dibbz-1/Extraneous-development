@@ -1,8 +1,19 @@
 var fight = obj_fightmanager;
 if image_alpha==0 {
-	if instance_id == obj_enemyA array_delete(global.enemy,1,1);
-	if instance_id == obj_enemyB array_delete(global.enemy,2,1);
-	if instance_id == obj_enemyC array_delete(global.enemy,3,1);
+	show_debug_message(instance);
+	if instance == obj_enemyA{
+		array_delete(global.enemy,0,1); 
+		show_debug_message("a");
+	}
+	if instance == obj_enemyB{
+		array_delete(global.enemy,1,1);
+		show_debug_message("b");
+	}
+	if instance == obj_enemyC{
+		array_delete(global.enemy,2,1); 
+		show_debug_message("c");
+	}
+	
 	show_debug_message(global.enemy);
 	if obj_fightmanager.currentTurn==1 global.fightingState++;
 	else{
@@ -13,9 +24,9 @@ if image_alpha==0 {
 }
 if enemy_hp<=0{
 	image_alpha-=0.05; 
-	x+=2;
-	y-=0.5;
-	image_angle--;
+	x+=5;
+	y-=0.8;
+	image_angle-=4;
 }
 if global.fightingState==6 && !alarmStarted{
 	alarmStarted=true; 
@@ -40,7 +51,7 @@ if global.fightingState==6 && !alarmStarted{
 		default: image_blend=c_white;
 	}	
 }else if global.fightingState==7 && !alarmStarted{
-	if global.enemy[global.enemyTurn]==enemy{
+	if global.enemy[global.enemyTurn]==enemy&&global.enemyTurn<array_length(global.enemy){
 		if string_count("Bug",global.enemy[global.enemyTurn])>0 enemyTurn="bug"
 		if string_count("Worm",global.enemy[global.enemyTurn])>0 enemyTurn="worm"
 		switch enemyTurn{

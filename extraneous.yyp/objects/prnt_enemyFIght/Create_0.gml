@@ -19,7 +19,7 @@ spawned=false;
 
 //enemy management
 
-enemyCount=array_length(global.enemy);
+global.enemyCount=array_length(global.enemy);
 enemyTurn="";
 enemy = "";
 enemy_hp = 100;
