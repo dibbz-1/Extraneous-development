@@ -1,16 +1,16 @@
 var fight = obj_fightmanager;
 if image_alpha==0 {
-	show_debug_message(instance);
 	if instance == obj_enemyA{
-		array_delete(global.enemy,0,1); 
+		global.enemy[0]="DEAD";
 		show_debug_message("a");
 	}
 	if instance == obj_enemyB{
-		array_delete(global.enemy,1,1);
+		show_debug_message(global.enemy[1]);
+		global.enemy[1]="DEAD";
 		show_debug_message("b");
 	}
 	if instance == obj_enemyC{
-		array_delete(global.enemy,2,1); 
+		global.enemy[2]="DEAD";
 		show_debug_message("c");
 	}
 	
@@ -20,6 +20,7 @@ if image_alpha==0 {
 		global.fightingState=5; 
 		obj_fightmanager.currentTurn++;
 	}
+	alarmStarted=false;
 	instance_destroy();
 }
 if enemy_hp<=0{
@@ -40,9 +41,29 @@ if global.fightingState==6 && !alarmStarted{
 	txtY=y
 	bounce=bounceIntensity;
 	first=true;
-	if fight.beeboTarg==enemy && fight.currentTurn==0 && fight.playerAct=="attack" alarm[0]=30;
-	else if fight.ajohnTarg==enemy && fight.currentTurn==1 && fight.ajohnAct=="attack" alarm[0]=30;
-	else alarmStarted=false;
+	//if beebo target exists
+	if !array_contains(global.enemy,fight.beeboTarg)&& fight.currentTurn==0{
+		fight.beeboTarg=global.enemy[0];
+		show_debug_message(fight.beeboTarg);
+		show_debug_message("enemy target is dead");
+	} 
+	
+	//if ajohn target exists
+	if !array_contains(global.enemy,fight.ajohnTarg)&& fight.currentTurn==1{
+		fight.ajohnTarg=global.enemy[0];
+		show_debug_message(fight.ajohnTarg);
+		show_debug_message("enemy target is dead");
+	}
+	
+	//execute player actions
+	
+	if fight.beeboTarg==enemy && fight.currentTurn==0 && fight.playerAct=="attack"{
+		alarm[0]=30;	
+		show_debug_message(fight.beeboTarg);
+	} else if fight.ajohnTarg==enemy && fight.currentTurn==1 && fight.ajohnAct=="attack"{
+		alarm[0]=30;
+		show_debug_message(fight.ajohnTarg);
+	} else alarmStarted=false;
 
 } else if global.fightingState==4{
 	switch obj_textbox.option[obj_textbox.option_pos] 
@@ -51,9 +72,10 @@ if global.fightingState==6 && !alarmStarted{
 		default: image_blend=c_white;
 	}	
 }else if global.fightingState==7 && !alarmStarted{
-	if global.enemy[global.enemyTurn]==enemy&&global.enemyTurn<array_length(global.enemy){
+	if global.enemy[global.enemyTurn]==enemy&&global.enemyTurn<=global.enemyCount{
 		if string_count("Bug",global.enemy[global.enemyTurn])>0 enemyTurn="bug"
 		if string_count("Worm",global.enemy[global.enemyTurn])>0 enemyTurn="worm"
+		show_debug_message(enemyTurn);
 		switch enemyTurn{
 			case "bug":
 				if !tut{
@@ -87,6 +109,12 @@ if global.fightingState==6 && !alarmStarted{
 					}
 				}
 			break;
+			case "DEAD":
+				alarm[4]=10;
+			break;
 		}
-	}else alarmStarted=false;
+	}else if (global.enemy[global.enemyTurn]=="DEAD"){
+		global.enemyTurn++; 
+	}
+	else alarmStarted=false;
 }

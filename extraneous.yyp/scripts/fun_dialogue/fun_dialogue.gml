@@ -69,7 +69,9 @@ function text_id_is(_textid){
 			else if fight.turn==1 fight.ajohnAct="attack";
 			text_engine("Which enemy?", 1, "top");
 			for (var i=0; i<array_length(global.enemy); i++){
-				scr_option(global.enemy[i],global.enemy[i]);
+				if !(global.enemy[i]=="DEAD"){
+					scr_option(global.enemy[i],global.enemy[i]);
+				}
 			}
 			cutscene_event("step");
 		break;

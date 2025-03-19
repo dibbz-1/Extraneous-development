@@ -3,8 +3,7 @@ if first{
 	audio_play_sound(snd_hit,1,0); 
 	first=false; 
 	hitSpawn=1;
-	show_debug_message(damage);
-	enemy_hp-=damage;
+	enemy_hp-=100;
 }
 if enemy_hp<=0{
 	alarm[2]=100;
