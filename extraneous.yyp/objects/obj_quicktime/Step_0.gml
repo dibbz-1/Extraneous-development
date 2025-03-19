@@ -21,7 +21,7 @@ if attacking{
 	}
 	if hitPitch=1.7{
 		attacking=false; 
-		fight.playerAttPwr=200/counter;
+		fight.playerAttPwr=300/counter;
 		var inst=instance_create_depth(0,0,depth-1,gpx_hitPower);
 		with inst{
 			if fight.currentTurn==0 targ=obj_player;

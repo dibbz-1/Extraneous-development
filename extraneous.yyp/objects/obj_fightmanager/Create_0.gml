@@ -6,7 +6,7 @@ for(var i=0;i<array_length(global.enemy);i++){
 	switch i{
 		case 0:
 			
-			var enemyA = instance_create_depth(270,144,0,obj_enemyA);
+			var enemyA = instance_create_depth(295,164,0,obj_enemyA);
 			with enemyA{
 				enemy=global.enemy[i];
 				if string_count("Bug",enemy)>0 sprite_index=spr_bug; pos=i; 
@@ -16,8 +16,8 @@ for(var i=0;i<array_length(global.enemy);i++){
 		break;
 		case 1:
 			
-			var enemyB = instance_create_depth(295,124,0,obj_enemyB);
-			with enemyB{
+			var enemyB = instance_create_depth(270,144,0,obj_enemyB);
+			with enemyB {
 				enemy=global.enemy[i];
 				if string_count("Bug",enemy)>0 sprite_index=spr_bug; pos=i; 
 				if string_count("Worm",enemy)>0 sprite_index=spr_wurmie; pos=i; 
@@ -25,7 +25,7 @@ for(var i=0;i<array_length(global.enemy);i++){
 			instance_create_depth(0,0,0,obj_bannerEnemyB);
 		break;
 		case 2:
-			var enemyC = instance_create_depth(295,164,0,obj_enemyC);
+			var enemyC = instance_create_depth(295,124,0,obj_enemyC);
 			with enemyC{
 				enemy=global.enemy[i];
 				if string_count("Bug",enemy)>0 sprite_index=spr_bug; pos=i; 
@@ -75,6 +75,7 @@ currentTurn=0;
 draw_set_font(fnt_default);
 draw_set_valign(fa_top);
 draw_set_halign(fa_left);
+
 
 instance_create_depth(145,250,0,char_1)
 instance_create_depth(210,250,0,char_2)

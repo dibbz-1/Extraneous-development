@@ -114,6 +114,9 @@ if event[page]==""
 			//skipping
 			if draw_char < text_length[page]{
 				draw_char = text_length[page];
+			} else if global.fightingState==4{
+				instance_destroy();
+				global.fightingState--; 
 			}
 		}
 

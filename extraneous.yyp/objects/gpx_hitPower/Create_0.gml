@@ -1,9 +1,9 @@
 targ=obj_player;
 var pwr=obj_fightmanager.playerAttPwr;
 
-if pwr>80 sprite_index=spr_crit;
+if pwr>70 sprite_index=spr_crit;
 else if pwr>50 sprite_index=spr_great;
-else if pwr>20 sprite_index=spr_ok;
+else if pwr>30 sprite_index=spr_ok;
 else sprite_index=spr_weak;
 
 image_xscale=0.5;

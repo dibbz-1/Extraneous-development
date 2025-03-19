@@ -6,6 +6,10 @@ if first{
 	show_debug_message(damage);
 	enemy_hp-=damage;
 }
-x=_x+bounce;
-bounce-=bounceIntensity/10;
-alarm[1]=3
+if enemy_hp<=0{
+	alarm[2]=50;
+} else{
+	x=_x+bounce;
+	bounce-=bounceIntensity/10;
+	alarm[1]=3
+}
