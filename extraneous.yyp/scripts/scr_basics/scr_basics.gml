@@ -30,3 +30,14 @@ function array_delete_ext(array, pos)
         return _array_new;
     }
 }
+
+function array_all_ext(_array,_value){
+	for (var i=0; i<array_length(_array); i++){
+		if (_array[i]!=_value){
+			return false;
+		}
+		if i==array_length(_array)-1{
+			return true;
+		}
+	}
+}

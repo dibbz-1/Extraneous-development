@@ -12,7 +12,7 @@ _x=x;
 //bullets
 
 bullets=0;
-tut=true;
+tut=false;
 hitSpawn=0;
 damage=0;
 spawned=false;

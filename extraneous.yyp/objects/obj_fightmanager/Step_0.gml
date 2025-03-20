@@ -110,5 +110,12 @@ switch global.fightingState{
 		turn=0;
 		obj_cameraManager.gliding=10;
 	break;
+	case 9:
+		obj_cameraManager.gliding=6;
+		if !spawned{
+			spawned=true;
+			instance_create_depth(0,0,obj_ajohn.depth-1,gpx_victory);
+		}
+	break;
 			
 }

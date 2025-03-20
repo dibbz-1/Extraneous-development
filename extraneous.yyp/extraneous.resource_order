@@ -27,6 +27,7 @@
     {"name":"gpx_dodgePrompt","order":3,"path":"objects/gpx_dodgePrompt/gpx_dodgePrompt.yy",},
     {"name":"gpx_hitPower","order":2,"path":"objects/gpx_hitPower/gpx_hitPower.yy",},
     {"name":"gpx_spamPrompt","order":1,"path":"objects/gpx_spamPrompt/gpx_spamPrompt.yy",},
+    {"name":"gpx_victory","order":4,"path":"objects/gpx_victory/gpx_victory.yy",},
     {"name":"NPC_TEMPLATE","order":5,"path":"objects/NPC_TEMPLATE/NPC_TEMPLATE.yy",},
     {"name":"obj_ajohn","order":7,"path":"objects/obj_ajohn/obj_ajohn.yy",},
     {"name":"obj_backgroundFade","order":24,"path":"objects/obj_backgroundFade/obj_backgroundFade.yy",},

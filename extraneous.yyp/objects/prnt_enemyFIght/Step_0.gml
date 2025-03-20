@@ -1,4 +1,5 @@
 var fight = obj_fightmanager;
+//if enemy is dead
 if image_alpha==0 {
 	if instance == obj_enemyA{
 		global.enemy[0]="DEAD";
@@ -13,13 +14,20 @@ if image_alpha==0 {
 		global.enemy[2]="DEAD";
 		show_debug_message("c");
 	}
-	
-	show_debug_message(global.enemy);
-	if obj_fightmanager.currentTurn==1 global.fightingState++;
-	else{
-		global.fightingState=5; 
-		obj_fightmanager.currentTurn++;
+	//if all enemies are dead, end fight
+	if array_all_ext(global.enemy,"DEAD"){
+		global.fightingState=9;
 	}
+	//if enemy is killed and enemies still remain, continue fight
+	else{
+		show_debug_message(global.enemy);
+		if obj_fightmanager.currentTurn==1 global.fightingState++;
+		else{
+			global.fightingState=5; 
+			obj_fightmanager.currentTurn++;
+		}
+	}
+	
 	alarmStarted=false;
 	instance_destroy();
 }
@@ -29,7 +37,9 @@ if enemy_hp<=0{
 	y-=0.8;
 	image_angle-=4;
 }
+//if player is attacking
 if global.fightingState==6 && !alarmStarted{
+	//init
 	alarmStarted=true; 
 	bounceIntensity=fight.playerAttPwr/5;
 	damage=fight.playerAttPwr
@@ -41,18 +51,31 @@ if global.fightingState==6 && !alarmStarted{
 	txtY=y
 	bounce=bounceIntensity;
 	first=true;
-	//if beebo target exists
+	
+	//if beebo's chosen target does not exist
 	if !array_contains(global.enemy,fight.beeboTarg)&& fight.currentTurn==0{
-		fight.beeboTarg=global.enemy[0];
+		//set targ to alive enemy
+		for (var i=0;i<array_length(global.enemy);i++){
+			if (global.enemy[i]!="DEAD"){
+				fight.beeboTarg=global.enemy[i];
+				continue;
+			}
+		}
 		show_debug_message(fight.beeboTarg);
-		show_debug_message("enemy target is dead");
+		show_debug_message("beebo target is dead");
 	} 
 	
-	//if ajohn target exists
+	//if ajohn's chosen target does not exist
 	if !array_contains(global.enemy,fight.ajohnTarg)&& fight.currentTurn==1{
-		fight.ajohnTarg=global.enemy[0];
+		//set targ to alive enemy
+		for (var i=2;i>0;i--){
+			if (global.enemy[i]!="DEAD"){
+				fight.ajohnTarg=global.enemy[i];
+				break;
+			}
+		}
 		show_debug_message(fight.ajohnTarg);
-		show_debug_message("enemy target is dead");
+		show_debug_message("ajohn target is dead");
 	}
 	
 	//execute player actions
@@ -64,57 +87,52 @@ if global.fightingState==6 && !alarmStarted{
 		alarm[0]=30;
 		show_debug_message(fight.ajohnTarg);
 	} else alarmStarted=false;
-
-} else if global.fightingState==4{
-	switch obj_textbox.option[obj_textbox.option_pos] 
-	{
-		case enemy: image_blend=c_red;
-		default: image_blend=c_white;
-	}	
-}else if global.fightingState==7 && !alarmStarted{
-	if global.enemy[global.enemyTurn]==enemy&&global.enemyTurn<=global.enemyCount{
-		if string_count("Bug",global.enemy[global.enemyTurn])>0 enemyTurn="bug"
-		if string_count("Worm",global.enemy[global.enemyTurn])>0 enemyTurn="worm"
-		show_debug_message(enemyTurn);
-		switch enemyTurn{
-			case "bug":
-				if !tut{
-					alarm[3]=50
-					bullets=0;
-					alarmStarted=true;
-				} else {
-					if !spawned{
-						var inst = instance_create_depth(0,0,obj_player.depth-1,gpx_dodgePrompt);
-						spawned=true;
-				}
-					if !instance_exists(gpx_dodgePrompt){
-						tut=false; 
-						spawned=false;
+} 
+//if enemy is attacking
+else if global.fightingState==7 && !alarmStarted{
+	if global.enemyTurn<global.enemyCount{
+		if global.enemy[global.enemyTurn]==enemy{
+			if string_count("Bug",global.enemy[global.enemyTurn])>0 enemyTurn="bug"
+			if string_count("Worm",global.enemy[global.enemyTurn])>0 enemyTurn="worm"
+			switch enemyTurn{
+				case "bug":
+					if !tut{
+						alarm[3]=50
+						bullets=0;
+						alarmStarted=true;
+					} else {
+						if !spawned{
+							var inst = instance_create_depth(0,0,obj_player.depth-1,gpx_dodgePrompt);
+							spawned=true;
 					}
-				}
-			break;
-			case "worm":
-				if !tut{
-					alarm[5]=50
-					bullets=0;
-					alarmStarted=true;
-				} else {
-					if !spawned{
-						var inst = instance_create_depth(0,0,obj_player.depth-1,gpx_dodgePrompt);
-						spawned=true;
-				}
-					if !instance_exists(gpx_dodgePrompt){
-						tut=false; 
-						spawned=false;
+						if !instance_exists(gpx_dodgePrompt){
+							tut=false; 
+							spawned=false;
+						}
 					}
-				}
-			break;
-			case "DEAD":
-				alarm[4]=10;
-			break;
+				break;
+				case "worm":
+					if !tut{
+						alarm[5]=50
+						bullets=0;
+						alarmStarted=true;
+					} else {
+						if !spawned{
+							var inst = instance_create_depth(0,0,obj_player.depth-1,gpx_dodgePrompt);
+							spawned=true;
+					}
+						if !instance_exists(gpx_dodgePrompt){
+							tut=false; 
+							spawned=false;
+						}
+					}
+				break;
+			}
+		}else if (global.enemy[global.enemyTurn]=="DEAD")&&!alarmStarted{
+			alarmStarted=true;
+			alarm[4]=10;
+			show_debug_message("enemy {0} is dead and will not attack",global.enemyTurn)
 		}
-	}else if (global.enemy[global.enemyTurn]=="DEAD"){
-		global.enemyTurn++; 
-	}
-	else alarmStarted=false;
+		else alarmStarted=false;
+	} else alarmStarted=false;
 }

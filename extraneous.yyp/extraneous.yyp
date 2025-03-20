@@ -47,6 +47,7 @@
     {"id":{"name":"gpx_fight","path":"objects/gpx_fight/gpx_fight.yy",},},
     {"id":{"name":"gpx_hitPower","path":"objects/gpx_hitPower/gpx_hitPower.yy",},},
     {"id":{"name":"gpx_spamPrompt","path":"objects/gpx_spamPrompt/gpx_spamPrompt.yy",},},
+    {"id":{"name":"gpx_victory","path":"objects/gpx_victory/gpx_victory.yy",},},
     {"id":{"name":"NPC_TEMPLATE","path":"objects/NPC_TEMPLATE/NPC_TEMPLATE.yy",},},
     {"id":{"name":"obj_ajohn","path":"objects/obj_ajohn/obj_ajohn.yy",},},
     {"id":{"name":"obj_backgroundFade","path":"objects/obj_backgroundFade/obj_backgroundFade.yy",},},
