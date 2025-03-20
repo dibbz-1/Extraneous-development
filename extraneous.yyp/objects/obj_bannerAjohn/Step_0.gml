@@ -1,3 +1,5 @@
+
+
 switch global.fightingState{
 	case 3:
 		switch obj_fightmanager.turn{

@@ -79,59 +79,44 @@ if global.fightingState==6 && !alarmStarted{
 	}
 	
 	//execute player actions
-	
-	if fight.beeboTarg==enemy && fight.currentTurn==0 && fight.playerAct=="attack"{
-		alarm[0]=30;	
-		show_debug_message(fight.beeboTarg);
-	} else if fight.ajohnTarg==enemy && fight.currentTurn==1 && fight.ajohnAct=="attack"{
-		alarm[0]=30;
-		show_debug_message(fight.ajohnTarg);
-	} else alarmStarted=false;
+	if !debug{
+		if fight.beeboTarg==enemy && fight.currentTurn==0 && fight.playerAct=="attack"{
+			alarm[0]=30;	
+			show_debug_message(fight.beeboTarg);
+		} else if fight.ajohnTarg==enemy && fight.currentTurn==1 && fight.ajohnAct=="attack"{
+			alarm[0]=30;
+			show_debug_message(fight.ajohnTarg);
+		} else alarmStarted=false;
+	}
+	else{
+		damage=100000000;
+		alarm[0]=1;
+	}
 } 
 //if enemy is attacking
 else if global.fightingState==7 && !alarmStarted{
-	if global.enemyTurn<global.enemyCount{
+	if global.enemyTurn<=global.enemyCount{
 		if global.enemy[global.enemyTurn]==enemy{
 			if string_count("Bug",global.enemy[global.enemyTurn])>0 enemyTurn="bug"
 			if string_count("Worm",global.enemy[global.enemyTurn])>0 enemyTurn="worm"
 			switch enemyTurn{
 				case "bug":
-					if !tut{
-						alarm[3]=50
-						bullets=0;
-						alarmStarted=true;
-					} else {
-						if !spawned{
-							var inst = instance_create_depth(0,0,obj_player.depth-1,gpx_dodgePrompt);
-							spawned=true;
-					}
-						if !instance_exists(gpx_dodgePrompt){
-							tut=false; 
-							spawned=false;
-						}
-					}
+					show_debug_message("bug is attacking");
+					bullets=0;
+					alarm[3]=50;
+					alarmStarted=true;
 				break;
 				case "worm":
-					if !tut{
-						alarm[5]=50
-						bullets=0;
-						alarmStarted=true;
-					} else {
-						if !spawned{
-							var inst = instance_create_depth(0,0,obj_player.depth-1,gpx_dodgePrompt);
-							spawned=true;
-					}
-						if !instance_exists(gpx_dodgePrompt){
-							tut=false; 
-							spawned=false;
-						}
-					}
+					show_debug_message("worm is attacking");
+					bullets=0;
+					alarm[5]=50;
+					alarmStarted=true;
 				break;
 			}
 		}else if (global.enemy[global.enemyTurn]=="DEAD")&&!alarmStarted{
 			alarmStarted=true;
-			alarm[4]=10;
 			show_debug_message("enemy {0} is dead and will not attack",global.enemyTurn)
+			enemy_turn_over();
 		}
 		else alarmStarted=false;
 	} else alarmStarted=false;

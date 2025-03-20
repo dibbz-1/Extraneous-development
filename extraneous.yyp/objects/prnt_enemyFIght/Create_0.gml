@@ -1,6 +1,7 @@
 //alarm control
 
 alarmStarted=false;
+debug=true;
 
 //bounce
 
@@ -19,11 +20,21 @@ spawned=false;
 
 //enemy management
 
-global.enemyCount=array_length(global.enemy);
+global.enemyCount=array_length(global.enemy)-1;
 enemyTurn="";
 enemy = "";
 enemy_hp = 100;
 image_alpha = 1;
+function enemy_turn_over(){
+	show_debug_message(global.enemyTurn);
+	global.enemyTurn++;
+	if global.enemyTurn>global.enemyCount{
+		global.fightingState=3;
+		global.enemyTurn=0;
+	}	
+	alarmStarted=false;
+	bullets=0;
+}
 
 //drawing damage
 

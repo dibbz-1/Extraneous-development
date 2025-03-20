@@ -1,3 +1,5 @@
+if !instance_exists(obj_fightmanager) instance_destroy();
+
 //self
 draw_sprite(spr_bannerbeebo,0,x,y);
 

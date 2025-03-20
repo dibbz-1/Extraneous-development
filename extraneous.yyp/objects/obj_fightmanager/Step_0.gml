@@ -114,8 +114,16 @@ switch global.fightingState{
 		obj_cameraManager.gliding=6;
 		if !spawned{
 			spawned=true;
-			instance_create_depth(0,0,obj_ajohn.depth-1,gpx_victory);
+			create_text("fight.win")
 		}
+	break;
+	case 10:
+		fadeToRoom(rm001_testA,10,c_black,80,100);
+		global.plrMove=true;
+		audio_stop_all();
+		global.mus=audio_play_sound(mus_outside,1,0);
+		global.fightingState=0;
+		obj_cameraManager.gliding=0;
 	break;
 			
 }

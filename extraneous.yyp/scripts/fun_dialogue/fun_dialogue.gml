@@ -88,6 +88,14 @@ function text_id_is(_textid){
 			}
 			cutscene_event("step");
 		break;
+		case "fight.win":
+			text_engine("Beebo and Ajohn were victorious!",0.8,"top");
+			text_engine(string("Beebo recieved {0} experience points!",fight.beeboXP),0.8,"top");
+			text_engine(string("Ajohn recieved {0} experience points!",fight.ajohnXP),0.8,"top");
+			text_engine(string("The party recieved ${0}!",fight.gold),0.8,"top");
+			cutscene_event("fight step");
+			cutscene_event("step");
+		break;
 		case "promethazine":
 			if fight.turn==0{
 				text_engine("I can't put down the cup.",0.5,"beebo");

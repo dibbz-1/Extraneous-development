@@ -21,7 +21,12 @@ if attacking{
 	}
 	if hitPitch=1.7{
 		attacking=false; 
-		fight.playerAttPwr=300/counter;
+		with fight{
+			playerAttPwr=round(300/obj_quicktime.counter);
+			if (currentTurn==0) beeboXP+=round(playerAttPwr/10);
+			if (currentTurn==1) ajohnXP+=round(playerAttPwr/10);
+			if (currentTurn==0) gold+=round(playerAttPwr/100);
+		}
 		var inst=instance_create_depth(0,0,depth-1,gpx_hitPower);
 		with inst{
 			if fight.currentTurn==0 targ=obj_player;
