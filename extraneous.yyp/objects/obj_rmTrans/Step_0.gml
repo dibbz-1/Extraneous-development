@@ -7,8 +7,8 @@ if (state == 0) {
 	if (timer >= duration) {
 		obj_player.x = playerx;
 		obj_player.y = playery;
+		if instance_exists(global.enemyKill) instance_destroy(global.enemyKill);
 		room_goto(targetRoom);
-
 		// Set state
 		state = 1;
 	}

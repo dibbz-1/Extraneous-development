@@ -37,13 +37,13 @@ function text_id_is(_textid){
 			cutscene_event("step");
 		break;
 		case "trick over":
-			text_engine("that was awesome, huh?",0.5,"ajohn");
+			text_engine("that was awesome, huh?",0.8,"ajohn");
 			cutscene_event("outside mus");
 			cutscene_event("step");
 		break;
 		
 		case ("fight test"):
-			text_engine("ew, a worm.",0.5,"beebo");
+			text_engine("ew, a worm.",0.8,"beebo");
 			cutscene_event("fight step");
 		break;
 		
@@ -57,7 +57,7 @@ function text_id_is(_textid){
 			cutscene_event("step");
 		break;
 		case ("ajohn turn"):
-			text_engine("Ajohn's turn", 1, "top");
+			text_engine("Ajohn's turn", 0.8, "top");
 			scr_option("attack","fight.attack");
 			scr_option("item","fight.item");
 			scr_option("skill","afight.skill");
@@ -67,7 +67,7 @@ function text_id_is(_textid){
 		case "fight.attack":
 			if fight.turn==0 fight.playerAct="attack";
 			else if fight.turn==1 fight.ajohnAct="attack";
-			text_engine("Which enemy?", 1, "top");
+			text_engine("Which enemy?", 0.8, "top");
 			for (var i=0; i<array_length(global.enemy); i++){
 				if !(global.enemy[i]=="DEAD"){
 					scr_option(global.enemy[i],global.enemy[i]);
@@ -82,7 +82,7 @@ function text_id_is(_textid){
 		break;
 		case "fight.item":
 			fight.playerAct="item";
-			text_engine("which item would you like to use?", 1, "top");
+			text_engine("which item would you like to use?", .8, "top");
 			for (var i=0; i<array_length(global.items); i++){
 				scr_option(global.items[i],global.items[i]);
 			}

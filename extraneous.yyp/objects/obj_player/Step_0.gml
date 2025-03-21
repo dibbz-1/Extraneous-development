@@ -37,7 +37,13 @@ if !instance_exists(obj_textbox) && !instance_exists(obj_rmTrans) && global.plrM
 	
 	if xSpd<0 sprite_index=spr_beebo_left;
 	else if xSpd>0 sprite_index=spr_beebo_right;
-
+	
+	if !(xSpd==0 && ySpd==0){
+		//array_delete(global.enemy,0,3);
+		randomize();
+		var rand = round(random(10));
+		if rand==1 fight_init();
+	}
 
 	//execute movement
 	x+=xSpd;
@@ -50,6 +56,7 @@ if !instance_exists(obj_textbox) && !instance_exists(obj_rmTrans) && global.plrM
 		
 
 	//depth sorting
+
 } 
 else if global.fightingState==1 {image_speed=0;}
 else if global.fightingState>=2&&global.fightingState<7 {sprite_index=spr_beebo_fightStance; image_speed=1;}

@@ -10,9 +10,11 @@ var chary = 0;
 //draw_text(50,50,draw_char);
 //draw_text(75,50,option_pos);
 //cutscenes
+
 if page>=page_number instance_destroy();
 if event[page]==""
 {
+	var spdTemp = text_spd[page];
 	txtbox_x = 430 - (txtbox_width/2);
 	var portrait_x = txtbox_x 
 	txtbox_y = 460;
@@ -67,7 +69,7 @@ if event[page]==""
 			text_spd[page]=0; 
 			pause=true;
 			draw_char++;
-		}
+		} 
 		
 		draw_char += text_spd[page];
 		draw_char = clamp(draw_char, 0, text_length[page])
@@ -81,7 +83,7 @@ if event[page]==""
 	//-------page flip
 	
 	if _keyboard_accept{
-		if pause pause=false; text_spd[page]=0.5; 
+		if pause pause=false; text_spd[page]=spdTemp; 
 		
 		//if done typing
 		if draw_char == text_length[page]{

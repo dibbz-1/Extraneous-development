@@ -1,5 +1,6 @@
 if  !instance_exists(obj_textbox) && global.fightingState=0{
 	gliding=1;
+	zoomFinished=false;
 } else if global.fightingState==1{
 	gliding=5;
 } 

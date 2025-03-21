@@ -52,5 +52,5 @@ if place_meeting(x,y,obj_player)&&global.fightingState==0{
 	instance_create_depth(0,0,0,gpx_fight);
 	audio_stop_all();
 	global.mus=audio_play_sound(snd_fightStart,1,0);
-	instance_destroy();
+	
 }

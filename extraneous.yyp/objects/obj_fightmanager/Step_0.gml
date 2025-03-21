@@ -124,6 +124,7 @@ switch global.fightingState{
 		global.mus=audio_play_sound(mus_outside,1,0);
 		global.fightingState=0;
 		obj_cameraManager.gliding=0;
+		array_delete(global.enemy,0,3);
 	break;
 			
 }

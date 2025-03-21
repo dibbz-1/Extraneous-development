@@ -1,7 +1,7 @@
 //alarm control
 
 alarmStarted=false;
-debug=true;
+debug=false;
 
 //bounce
 

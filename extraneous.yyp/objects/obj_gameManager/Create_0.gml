@@ -7,6 +7,7 @@ global.cutStep=0;
 //fight setup
 global.fightingState=0;
 global.enemy[0]="";
+global.enemyKill=noone;
 
 //text setup
 draw_set_font(fnt_default);
