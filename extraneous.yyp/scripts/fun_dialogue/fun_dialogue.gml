@@ -11,37 +11,17 @@ function text_id_is(_textid){
 		break;
 		
 		// npc_dialogue \\
-		case "log00":
-			cutscene_event("ajohn mus");
-			text_engine("Do you want to see an awesome trick?",0.5,"ajohn");
-			scr_option("yes","yes");
-			scr_option("no","no");
+		case "log.intro":
+			text_engine("Uhg-",0.3,"beebo");
+			text_engine("What the-",0.5,"beebo");
+			text_engine("WHERE THE HELL AM I??",0.9,"beebo");
+			cutscene_event("step");
+		case "log.intro2":
+			text_engine("Good, you're finally awake.",0.3,"ajohn");
+			text_engine("Who are you? W- where are you?",0.5,"beebo");
+			text_engine("Please relax, my child. I will not hurt you.",0.5,"ajohn");
 			cutscene_event("step");
 		break;
-		case "no":
-			scn_ajohnTest.ajohnTrick=false;
-			text_engine("No thanks. I'm kinda busy.",0.5,"beebo");
-			text_engine("Doing what?",0.5,"ajohn");
-			text_engine("Theres this bug I gotta fight.",0.5,"beebo");
-			text_engine("You mean that one? I wouldn't do that if I were you.",0.5,"ajohn");
-			text_engine("Why not?",0.5,"beebo","confused");
-			text_engine("You know what, go ahead.",0.5,"ajohn");
-			text_engine("I will. Ass hole.",0.5,"beebo","mad");
-			cutscene_event("outside mus");
-			cutscene_event("step");
-		break;
-		case "yes":
-			scn_ajohnTest.ajohnTrick=true;
-			text_engine("yay!",0.5,"ajohn");
-			text_engine("Watch this",0.5,"ajohn");
-			cutscene_event("step");
-		break;
-		case "trick over":
-			text_engine("that was awesome, huh?",0.8,"ajohn");
-			cutscene_event("outside mus");
-			cutscene_event("step");
-		break;
-		
 		case ("fight test"):
 			text_engine("ew, a worm.",0.8,"beebo");
 			cutscene_event("fight step");

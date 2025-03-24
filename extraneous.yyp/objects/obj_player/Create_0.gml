@@ -6,6 +6,10 @@ mvSpd = 2;
 invincible=false;
 pressed=false;
 
+fights=false;
+image_speed=0;
+image_index=3;
+
 function fight_check(){
 	for (var i=0; i<3; i++)
 	{

@@ -12,7 +12,7 @@ var chary = 0;
 //cutscenes
 
 if page>=page_number instance_destroy();
-if event[page]==""
+else if event[page]==""
 {
 	var spdTemp = text_spd[page];
 	txtbox_x = 430 - (txtbox_width/2);

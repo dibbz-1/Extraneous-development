@@ -4,6 +4,8 @@ var leftKey = keyboard_check(vk_left);
 var upKey = keyboard_check(vk_up);
 var downKey = keyboard_check(vk_down);
 
+
+
 if !instance_exists(obj_textbox) && !instance_exists(obj_rmTrans) && global.plrMove{
 	
 	//var attackKey = keyboard_check_pressed(ord("C"));
@@ -38,13 +40,14 @@ if !instance_exists(obj_textbox) && !instance_exists(obj_rmTrans) && global.plrM
 	if xSpd<0 sprite_index=spr_beebo_left;
 	else if xSpd>0 sprite_index=spr_beebo_right;
 	
-	if !(xSpd==0 && ySpd==0){
-		//array_delete(global.enemy,0,3);
-		randomize();
-		var rand = round(random(10));
-		if rand==1 fight_init();
+	if fights{
+		if !(xSpd==0 && ySpd==0){
+			//array_delete(global.enemy,0,3);
+			randomize();
+			var rand = round(random(10));
+			if rand==1 fight_init();
+		}
 	}
-
 	//execute movement
 	x+=xSpd;
 	y+=ySpd;

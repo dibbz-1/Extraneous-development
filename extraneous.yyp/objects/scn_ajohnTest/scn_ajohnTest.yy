@@ -10,7 +10,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"Scenes",
-    "path":"folders/Scenes.yy",
+    "path":"folders/Objects/Scenes.yy",
   },
   "parentObjectId":null,
   "persistent":false,
