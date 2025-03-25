@@ -51,6 +51,7 @@ switch global.cutStep{
 			create_text("log.intro4");
 			counter=0;
 			counterb++;
+			setup=true;
 		}
 		
 	break;
@@ -60,11 +61,12 @@ switch global.cutStep{
 		if counter==60 obj_player.sprite_index=spr_beebo_right;
 		
 		if counter==130{
-			beebo_shake(5,2);
+			
 			create_text("log.intro5");
 			counter=0;
 			counterb++;
 		}
+		if counter==0 &&counterb==2 beebo_shake(5,2);
 		
 	break;
 	case 7:
