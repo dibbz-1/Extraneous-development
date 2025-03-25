@@ -36,6 +36,16 @@ function text_engine(_text,_speed,_char=0,_emote = "neutral"){
 			}
 				
 		break;
+		case "cifi":
+			side[page_number] = "R";
+			sound[page_number]="bap";
+			switch _emote{
+				case "neutral":
+					portrait[page_number] = spr_cifirie_pProto; 
+				break;
+			}
+				
+		break;
 		case "beebo":
 			side[page_number] = "L";
 			sound[page_number]="bap";

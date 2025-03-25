@@ -19,6 +19,7 @@ text[0] = ""
 text_length[0] = string_length(text[0]);
 draw_char = 0;
 text_spd[page] = 0.1;
+text_spd_actual=1;
 print_fin = 1;
 sound[0] = "";
 char[0]="";
@@ -44,11 +45,7 @@ arrowsub = 0;
 alarm[1] = 5;
 
 // cutscene setup
-enum cutsceneStates {
-	active,
-	paused
-}
-cutState=cutsceneStates.active;
+cutGliding=false;
 
 // music assignments
 mus=noone;
