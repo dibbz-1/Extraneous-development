@@ -22,6 +22,34 @@ function text_id_is(_textid){
 			text_engine("Please relax, my child. I will not hurt you.",0.5,"ajohn");
 			cutscene_event("step");
 		break;
+		case "log.intro3":
+			text_engine("A- am I dreaming or something? What the hell is this?",0.7,"beebo");
+			text_engine("I understand that this is a lot right now but I need you to calm down. Do you remember anything from before you woke up here?",0.7,"ajohn");
+			text_engine("Well... not really... I remember not being pink though, what's up with that?",0.7,"beebo");
+			text_engine("Everyone here looks a but odd, but you'll get used to it. Come, My child. It's not safe here.",0.6,"ajohn");
+			cutscene_event("step");
+		break;
+		case "log.intro4":
+			text_engine("I don't think you ever answered my questions.",0.7,"beebo");
+			text_engine("Well, I am ajohn. I wait out here for lost souls so I can guide them to my town.",0.7,"ajohn");
+			text_engine("Lost souls?? What does that mean?",0.7,"beebo");
+			text_engine("I think that's better left unsaid for the time being...",0.7,"ajohn");
+			text_engine("No, I'd like to know. I can handle it.",0.7,"beebo");
+			text_engine("You're... You're in limbo. You're dead.",0.7,"ajohn");
+			cutscene_event("step");
+		break;
+		case "log.intro5":
+			text_engine("WHAT!???",0.9,"beebo");
+			text_engine("AHA! I see you are both distressed by my sudden presence!",0.9,"cifi");
+			cutscene_event("step");
+		break;
+		case "log.intro6":
+			text_engine("..",0.9,"beebo");
+			text_engine(".. This is cifirie. She's not really a threat.",0.9,"ajohn");
+			text_engine("..",0.9,"beebo");
+			text_engine("WE'LL SEE ABOUT THAT!",0.9,"cifi");
+			cutscene_event("step");
+		break;
 		case ("fight test"):
 			text_engine("ew, a worm.",0.8,"beebo");
 			cutscene_event("fight step");

@@ -14,7 +14,6 @@ var chary = 0;
 if page>=page_number instance_destroy();
 else if event[page]==""
 {
-	var spdTemp = text_spd[page];
 	txtbox_x = 430 - (txtbox_width/2);
 	var portrait_x = txtbox_x 
 	txtbox_y = 460;
@@ -65,11 +64,20 @@ else if event[page]==""
 	//------------type
 	if draw_char < text_length[page]{
 		var currentChar = string_copy(text[page],draw_char,1);
-		if currentChar=="." or currentChar=="?" or currentChar=="-"{
+		if currentChar=="." or currentChar=="?"{
+			if text_spd[page]!=0 text_spd_actual=text_spd[page];
 			text_spd[page]=0; 
 			pause=true;
 			draw_char++;
 		} 
+		if currentChar=="-" or currentChar==","{
+			if text_spd[page]!=0 text_spd_actual=text_spd[page];
+			text_spd[page]=0; 
+			pause=true;
+			draw_char++;
+			alarm[2]=15;
+		}
+			
 		
 		draw_char += text_spd[page];
 		draw_char = clamp(draw_char, 0, text_length[page])
@@ -83,7 +91,10 @@ else if event[page]==""
 	//-------page flip
 	
 	if _keyboard_accept{
-		if pause pause=false; text_spd[page]=spdTemp; 
+		if pause{
+			pause=false;
+			text_spd[page]=text_spd_actual; 
+		}
 		
 		//if done typing
 		if draw_char == text_length[page]{
@@ -146,7 +157,7 @@ else if event[page]==""
 			
 			}
 		}
-		if cutState==cutsceneStates.active && char[page]!="top"{
+		if cutGliding && char[page]!="top"{
 			switch char[page]{
 				case "ajohn":
 					obj_cameraManager.gliding=3;
@@ -166,6 +177,7 @@ else if event[page]==""
 		
 			}
 		}
+		else obj_cameraManager.gliding=1;
 
 		//---------options
 		if draw_char = text_length[page] && page == page_number-1
@@ -236,7 +248,6 @@ else if event[page]==""
 		break;
 		
 		case "focus ajohn":
-			cutState = cutsceneStates.active;
 			obj_cameraManager.gliding=3;
 		break;
 		
@@ -247,7 +258,6 @@ else if event[page]==""
 		break;
 		
 		case "focus off":
-			cutState = cutsceneStates.active;
 			obj_cameraManager.gliding=1;
 		break;
 		
@@ -269,9 +279,10 @@ else if event[page]==""
 			global.mus = noone;
 			audio_stop_all();
 		break;
+		
+		
 		case "step":
 			++global.cutStep;
-			show_debug_message("dick");
 		break;
 	}
 	if page!=page_number page++;
