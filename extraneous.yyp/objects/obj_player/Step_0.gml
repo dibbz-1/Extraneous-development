@@ -24,7 +24,7 @@ if !instance_exists(obj_textbox) && !instance_exists(obj_rmTrans) && global.plrM
 
 	if xSpd==0 && ySpd==0{
 		pressed=false
-		image_index=3; 
+		image_index=0; 
 		image_speed=0;
 	} else{
 		image_speed=1;
@@ -77,7 +77,7 @@ else if global.fightingState==7{
 	
 	if xSpd==0{
 		pressed=false
-		image_index=3; 
+		image_index=0; 
 		image_speed=0;
 	} else{
 		image_speed=1;

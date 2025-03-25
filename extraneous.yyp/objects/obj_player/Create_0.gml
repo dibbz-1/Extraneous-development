@@ -8,7 +8,7 @@ pressed=false;
 
 fights=false;
 image_speed=0;
-image_index=3;
+image_index=0;
 
 function fight_check(){
 	for (var i=0; i<3; i++)
