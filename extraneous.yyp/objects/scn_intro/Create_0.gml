@@ -9,10 +9,10 @@ _x=0;
 setup=true;
 pwr=0;
 
-function beebo_shake(shake_pwr, time){
+function char_shake(char, shake_pwr, time){
 	if setup{
 		pwr=shake_pwr;
-		_x=obj_player.x;
+		_x=char.x;
 		counterShake=time;
 		setup=false;
 		_switch=1;
@@ -22,8 +22,8 @@ function beebo_shake(shake_pwr, time){
 		if counterShake==0{
 			pwr-=shake_pwr/10;
 			_switch*=-1;
-			if _switch==-1 obj_player.x=_x-pwr;
-			if _switch==1 obj_player.x=_x+pwr;
+			if _switch==-1 char.x=_x-pwr;
+			if _switch==1 char.x=_x+pwr;
 			counterShake=time;
 		}
 	}

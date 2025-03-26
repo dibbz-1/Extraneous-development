@@ -66,7 +66,7 @@ switch global.cutStep{
 			counter=0;
 			counterb++;
 		}
-		if counter==0 &&counterb==2 beebo_shake(5,2);
+		if counter==0 &&counterb==3 char_shake(obj_player,5,2);
 		
 	break;
 	case 7:
