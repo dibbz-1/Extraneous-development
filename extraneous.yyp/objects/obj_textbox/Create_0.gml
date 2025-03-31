@@ -45,7 +45,7 @@ arrowsub = 0;
 alarm[1] = 5;
 
 // cutscene setup
-cutGliding=false;
+
 
 // music assignments
 mus=noone;
