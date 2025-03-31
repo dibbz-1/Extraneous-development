@@ -98,8 +98,8 @@ else if event[page]==""
 		
 		//if done typing
 		if draw_char == text_length[page]{
-			
-			if event[page+1]!="step"{
+			var nextEvent=event[page+1]
+			if nextEvent==""{
 				
 				if page != page_number {
 					page++;
@@ -112,13 +112,20 @@ else if event[page]==""
 					instance_destroy();
 				}
 				
-			} else {
+			} else if nextEvent=="step"{
 				global.cutStep++;
 				if (option_pos >= 0){
 					create_text(option_link_id[option_pos]);
 				}
 				instance_destroy();
+			} else if nextEvent=="stepReset"{
+				global.cutStep=1;
+				if (option_pos >= 0){
+					create_text(option_link_id[option_pos]);
+				}
+				instance_destroy();
 			}
+
 				
 		}
 	}
@@ -283,6 +290,12 @@ else if event[page]==""
 		
 		case "step":
 			++global.cutStep;
+		break;
+		case "stepBack":
+			--global.cutStep;
+		break;
+		case "stepReset":
+			global.cutStep=1;
 		break;
 	}
 	if page!=page_number page++;

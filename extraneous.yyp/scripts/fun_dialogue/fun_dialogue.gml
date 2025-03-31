@@ -64,6 +64,47 @@ function text_id_is(_textid){
 			cutscene_event("fight step");
 			cutscene_event("step");
 		break;
+		
+		// shop dialogue \\
+		case "log.shopGreet":
+			text_engine("uhhh... sorry dude I'm like so damn high right now huhuh...", 0.7, "squeeze");
+			cutscene_event("step");
+		break;
+		case "log.shopOpt":
+			text_engine("what can I you do you you for?", 0.7,"squeeze")
+			scr_option("talk","shopTalk");
+			scr_option("buy","shopBuy");
+			scr_option("sell","shopTalk");
+			scr_option("bye.","shopTalk");
+			cutscene_event("step");
+		break;
+		case "shopBuy":
+			text_engine("alright, here are your options", 0.7, "squeeze");
+			scr_option("sword","shopSwd");
+			scr_option("doobie","shopDoob");
+			scr_option("wizard bar","shopWB");
+			scr_option("nevermind.","log.shopOpt");
+			cutscene_event("step");
+		break;
+		case "shopTalk":
+			text_engine("sure, what do you wanna know?",0.7,"squeeze");
+			scr_option("stain","shopStain");
+			scr_option("stickers","shopStickers");
+			scr_option("mob","shopMob");
+			scr_option("nevermind.","log.shopOpt");
+			cutscene_event("step");
+		break;
+		case "shopStain":
+			text_engine("huhuh... I greened out earlier, sorry if it smells.",0.7,"squeeze");
+			cutscene_event("stepReset");
+		break;
+		case "shopWB":
+			array_push(global.items,"Unflavored Wizard Bar");
+			text_engine("I guess you look 21...",0.7,"squeeze");
+			text_engine("Here you go. Flavored vapes got banned in the valley this year, so you're stuck with that shitty one.",0.7,"squeeze");
+			cutscene_event("stepReset");
+		break;
+		
 		// fight dialogue \\
 		case ("player turn"):
 			text_engine("Beebo's turn", 1, "top");
