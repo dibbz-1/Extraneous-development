@@ -5,8 +5,23 @@ var down = keyboard_check_pressed(vk_down);
 var confirm = keyboard_check_pressed(ord("Z"));
 
 switch global.fightingState{
+	case 2:
+		if scriptedFight=="Cifi"{
+			if !spawned{
+				switch fightLog{
+					case 0:
+						create_text("fight.cifiStart");
+					break;
+				}
+				spawned=true;
+				fightLog++
+			}
+		}
+	break;
+			
 	case 3:
 		obj_cameraManager.gliding=6
+		spawned=false;
 		if right{
 			if turn!=1 turn++;
 			else turn=0;

@@ -1,7 +1,16 @@
 switch global.cutStep{
+	case 0:
+		if counter>=0 counter++;
+		if counter==40{
+			create_text("log.intro");
+			obj_cameraManager.cutGliding=false;
+			counter=-1;
+			
+		}
+	break;
 	case 1:
 		counter++;
-		if counter==7{
+		if counter>=7{
 
 			counterb++;
 			if counterb==1 obj_player.sprite_index=spr_beebo_right;
@@ -19,11 +28,14 @@ switch global.cutStep{
 		if counterb=0 counter++;
 		if counter==20{
 			create_text("log.intro2");
+			
 			counterb++;
 			counter=0;
 		} 
+		if counterb==1 char_shake(obj_player,5,2,false);
 	break;
 	case 3:
+		obj_player.sprite_index=spr_beebo_right;
 		counter++;
 		obj_ajohn.x-=1.2;
 		if counter==130{
@@ -41,6 +53,7 @@ switch global.cutStep{
 		} 
 	break;
 	case 5:
+		obj_player.sprite_index=spr_beebo_forward;
 		if counterb==1 counter++;
 		if obj_ajohn.y<450{
 			obj_ajohn.y++;
@@ -56,6 +69,7 @@ switch global.cutStep{
 		
 	break;
 	case 6:
+		
 		if counterb==2 counter++;
 		if counter==15 obj_player.image_speed=0;
 		if counter==60 obj_player.sprite_index=spr_beebo_right;
@@ -66,20 +80,28 @@ switch global.cutStep{
 			counter=0;
 			counterb++;
 		}
-		if counter==0 &&counterb==3 char_shake(obj_player,5,2);
+		if counter==0 &&counterb==3 char_shake(obj_player,5,2,true);
 		
 	break;
 	case 7:
 		if counter==1 obj_cifirie.y=obj_player.y+150
-		if counterb==3{
-			counter++; 
+		if counter<=50&&counter!=0{
+			 
 			obj_cifirie.y-=2.5;
 		}
-		if counter==50{
+		if counterb==3 counter++;
+		show_debug_message(counter);
+		if counter==150{
 			create_text("log.intro6");
-			counter=0
+			counter=0;
 			counterb++;
 		}
 		
+	break;
+	case 8:
+		if counter==0{
+			counter++;
+			fight_check("Cifirie");
+		}
 	break;
 }

@@ -1,13 +1,12 @@
-if  !instance_exists(obj_textbox) && global.fightingState=0{
-	gliding=1;
-	zoomFinished=false;
-} else if global.fightingState==1{
+if global.fightingState==1{
 	gliding=5;
 } 
-depth=0;
-
 
 switch gliding{
+	case 0:
+		focus="global";
+		cam_glide(x,y,CAM_WIDTH,CAM_HEIGHT,2);
+	break;
 
 	case 1:
 		focus="global";

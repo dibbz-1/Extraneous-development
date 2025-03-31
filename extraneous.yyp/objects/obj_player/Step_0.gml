@@ -45,7 +45,7 @@ if !instance_exists(obj_textbox) && !instance_exists(obj_rmTrans) && global.plrM
 			//array_delete(global.enemy,0,3);
 			randomize();
 			var rand = round(random(10));
-			if rand==1 fight_init();
+			if rand==1 fight_check();
 		}
 	}
 	//execute movement

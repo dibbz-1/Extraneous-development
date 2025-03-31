@@ -1,7 +1,9 @@
 //characters
 global.mus=audio_play_sound(mus_fight,1,1);
 global.enemyTurn=0;
-
+scriptedFight="";
+fightLog=0;
+obj_cameraManager.cutGliding=true
 for(var i=0;i<array_length(global.enemy);i++){
 	switch i{
 		case 0:
@@ -11,6 +13,10 @@ for(var i=0;i<array_length(global.enemy);i++){
 				enemy=global.enemy[i];
 				if string_count("Bug",enemy)>0 sprite_index=spr_bug; pos=i; 
 				if string_count("Worm",enemy)>0 sprite_index=spr_wurmie; pos=i; 
+				if string_count("Cifirie",enemy)>0{
+					sprite_index=spr_cifirie_proto; pos=i; 
+					obj_fightmanager.scriptedFight="Cifi"
+				}
 			}
 			instance_create_depth(0,0,0,obj_bannerEnemyA);
 		break;
@@ -35,13 +41,13 @@ for(var i=0;i<array_length(global.enemy);i++){
 		break;
 	}
 }
+
 char_1 = obj_bannerBeebo;
 char_2 = obj_bannerAjohn;
 enemy = spr_none;
 sub = 0;
 frames_s = 7
 alarm[0] = frames_s;
-alarm[1] = 30;
 char_size = 2;
 turn=0;
 instance=noone;

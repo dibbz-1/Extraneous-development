@@ -157,7 +157,7 @@ else if event[page]==""
 			
 			}
 		}
-		if cutGliding && char[page]!="top"{
+		if obj_cameraManager.cutGliding && char[page]!="top"{
 			switch char[page]{
 				case "ajohn":
 					obj_cameraManager.gliding=3;
@@ -172,12 +172,12 @@ else if event[page]==""
 				break;
 					
 				default:
-					obj_cameraManager.gliding=1;
+					//obj_cameraManager.gliding=1;
 				break;
 		
 			}
 		}
-		else obj_cameraManager.gliding=1;
+		
 
 		//---------options
 		if draw_char = text_length[page] && page == page_number-1

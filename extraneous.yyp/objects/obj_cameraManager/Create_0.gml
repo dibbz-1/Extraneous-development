@@ -7,7 +7,7 @@ height=216;
 xPos=obj_player.x;
 yPos=obj_player.y;
 gliding=0;
-
+cutGliding=false;
 
 
 zoomFinished=false;
@@ -15,6 +15,7 @@ zoomFinished=false;
 
 /* gliding cases
 
+0 - camera stays where it is
 1 - player focus moving
 2 - player focus zoomed
 3 - ajohn focus zoomed
