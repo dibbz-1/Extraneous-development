@@ -1,4 +1,4 @@
-with obj_textbox{
+with obj_textboxStore{
 	obj_shopkeeper.talking=!(print_fin or pause);
 }
 if talking image_speed=1;
@@ -8,7 +8,7 @@ else{
 }
 switch global.cutStep{
 	case 1:
-		create_text("log.shopOpt");
+		create_store_text("log.shopOpt");
 		global.cutStep++;
 	break;
 }

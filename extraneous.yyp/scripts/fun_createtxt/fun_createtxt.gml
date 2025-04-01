@@ -102,6 +102,13 @@ function create_text(_textid){
 			
 	}
 }
+function create_store_text(_textid){
+	//show_debug_message("txt created");
+	with(instance_create_depth(x,y,-9999,obj_textboxStore)){
+		text_id_is(_textid);
+			
+	}
+}
 
 function create_text_top(_textid){
 	with(instance_create_depth(x,y,-9999,obj_textbox)){
