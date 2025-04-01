@@ -11,4 +11,11 @@ switch global.cutStep{
 		create_store_text("log.shopOpt");
 		global.cutStep++;
 	break;
+	case 3:
+		instance_activate_object(obj_cameraManager);
+		global.plrMove=true
+		obj_player.image_alpha=0;
+		fadeToRoom(rm001_testA,10,c_black,0,0);
+		global.cutStep=0;
+	break;
 }

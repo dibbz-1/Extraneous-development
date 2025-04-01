@@ -11,7 +11,7 @@ var chary = 0;
 //draw_text(75,50,option_pos);
 //cutscenes
 
-if page>=page_number instance_destroy();
+if page>page_number instance_destroy();
 else if event[page]==""
 {
 	txtbox_x = 430 - (txtbox_width/2);
@@ -98,14 +98,20 @@ else if event[page]==""
 		
 		//if done typing
 		if draw_char == text_length[page]{
-			var nextEvent=event[page+1]
+			
+			try{
+				nextEvent=event[page+1]
+			} catch(except){
+				nextEvent="";
+			}
 			if nextEvent==""{
 				
 				if page != page_number {
 					page++;
 					draw_char = 0;
 					
-				} else if page==page_number-1{
+					
+				} else if page==page_number{
 					if (option_pos >= 0){
 						create_text(option_link_id[option_pos]);
 					}
@@ -187,7 +193,7 @@ else if event[page]==""
 		
 
 		//---------options
-		if draw_char = text_length[page] && page == page_number-1
+		if draw_char = text_length[page] && page == page_number
 		{
 			// font setup
 			//draw_set_font(fnt_default_small);

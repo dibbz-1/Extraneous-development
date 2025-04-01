@@ -4,10 +4,28 @@ function text_id_is(_textid){
 	var fight = obj_fightmanager;
 	switch(_textid){
 		
-		case "log0":
-			//text_engine("ermm...",1,"beebo", "neutral");
-			//text_engine("yo.",1,"ajohn", "neutral");
-			//text_engine("what the freeak dude",1,"beebo", "neutral");
+		case "log00":
+			text_engine("ermm...",1,"beebo");
+			text_engine("yo.",1,"ajohn");
+			text_engine("what the freeak dude",1,"beebo");
+			text_engine("You wanna see something awesome?",1,"ajohn");
+			scr_option("sure.","ajohntrickyes")
+			scr_option("no.","ajohntrickno")
+		break;
+		case "ajohntrickyes":
+			scn_ajohnTest.ajohnTrick=true;
+			text_engine("baller.",1,"ajohn");
+			cutscene_event("step");
+		break;
+		case "ajohntrickno":
+			scn_ajohnTest.ajohnTrick=false;
+			text_engine("aw man...",1,"ajohn");
+			cutscene_event("step");
+		break;
+		case "trick over":
+			text_engine("sick, huh?",1,"ajohn");
+			text_engine("I guess",1,"beebo");
+			cutscene_event("step");
 		break;
 		
 		// npc_dialogue \\
@@ -62,7 +80,12 @@ function text_id_is(_textid){
 			text_engine("Yeah, let's go. I think we're all set.",0.9,"ajohn");
 			text_engine("Try attacking first.",0.9,"ajohn");
 			cutscene_event("fight step");
-			cutscene_event("step");
+		break;
+		
+		// chest dialogue \\
+		case "gold chest":
+			text_engine(string("Beebo found {0} gold!", global.goldChest),1,"top");
+			//cutscene_event("step reset");
 		break;
 		
 		// shop dialogue \\
@@ -71,38 +94,78 @@ function text_id_is(_textid){
 			cutscene_event("step");
 		break;
 		case "log.shopOpt":
-			text_engine("what can I you do you you for?", 0.7,"squeeze")
+			text_engine("what can I do for ya?", 1,"squeeze")
 			scr_option("talk","shopTalk");
 			scr_option("buy","shopBuy");
 			scr_option("sell","shopTalk");
-			scr_option("bye.","shopTalk");
+			scr_option("bye.","shopLeave");
+		break;
+		case "shopLeave":
+			text_engine("See you around I guess.", 1,"squeeze")
 			cutscene_event("step");
 		break;
 		case "shopBuy":
-			text_engine("alright, here are your options", 0.7, "squeeze");
-			scr_option("sword","shopSwd");
-			scr_option("doobie","shopDoob");
-			scr_option("wizard bar","shopWB");
+			text_engine("alright, here are your options", 1, "squeeze");
+			scr_option(string("Sword: ${0}",global.itemDat.sword.price),"shopSwd");
+			scr_option(string("Wizard Bar: ${0}",global.itemDat.wizbar.price),"shopDoob");
+			scr_option(string("Doobie: ${0}",global.itemDat.doobie.price),"shopWB");
 			scr_option("nevermind.","log.shopOpt");
-			cutscene_event("step");
 		break;
 		case "shopTalk":
-			text_engine("sure, what do you wanna know?",0.7,"squeeze");
+			text_engine("sure, what do you wanna know?",1,"squeeze");
 			scr_option("stain","shopStain");
 			scr_option("stickers","shopStickers");
 			scr_option("mob","shopMob");
 			scr_option("nevermind.","log.shopOpt");
-			cutscene_event("step");
 		break;
 		case "shopStain":
-			text_engine("huhuh... I greened out earlier, sorry if it smells.",0.7,"squeeze");
+			text_engine("huhuh... I greened out earlier, sorry if it smells.",1,"squeeze");
+			cutscene_event("stepReset");
+		break;
+		case "shopStickers":
+			text_engine("oh, these? these are my soberstickers. they were supposed to help me quit drinking.",1,"squeeze");
+			text_engine("now I just smoke weed.",1,"squeeze");
+			cutscene_event("stepReset");
+		break;
+		case "shopMob":
+			text_engine("Oh, you ran into some grunts didn't you?",1,"squeeze");
+			text_engine("Most of them around here are easy to deal with, but the closer you get to the city the more dangerous they are.",1,"squeeze");
+			text_engine("If you have plans on going the city, be real carefull.",1,"squeeze");
 			cutscene_event("stepReset");
 		break;
 		case "shopWB":
-			array_push(global.items,"Unflavored Wizard Bar");
-			text_engine("I guess you look 21...",0.7,"squeeze");
-			text_engine("Here you go. Flavored vapes got banned in the valley this year, so you're stuck with that shitty one.",0.7,"squeeze");
-			cutscene_event("stepReset");
+			if global.gold>=global.itemDat.wizbar.price{
+				global.gold-=global.itemDat.wizbar.price;
+				array_push(global.items,"Unflavored Wizard Bar");
+				text_engine("I guess you look 21...",1,"squeeze");
+				text_engine("Here you go. Flavored vapes got banned in the valley this year, so you're stuck with that shitty one.",0.7,"squeeze");
+				cutscene_event("stepReset");
+			} else {
+				text_engine("You don't have enough money for that.",1,"squeeze");
+				cutscene_event("stepReset");
+			}
+		break;
+		case "shopSwd":
+			if global.gold>=global.itemDat.sword.price{
+				global.gold-=global.itemDat.sword.price;
+				array_push(global.items,"Basic Sword");
+				text_engine("Be careful with that, it's really dull.",0.7,"squeeze");
+				cutscene_event("stepReset");
+			} else {
+				text_engine("You don't have enough money for that.",1,"squeeze");
+				cutscene_event("stepReset");
+			}
+		break;
+		case "shopDoob":
+			if global.gold>=global.itemDat.doobie.price{
+				global.gold-=global.itemDat.doobie.price;
+				array_push(global.items,"Doobie");
+				text_engine("Here you go. Thank god for the president or else this shit would be illegal still.",0.7,"squeeze");
+				cutscene_event("stepReset");
+			} else {
+				text_engine("You don't have enough money for that.",1,"squeeze");
+				cutscene_event("stepReset");
+			}
 		break;
 		
 		// fight dialogue \\
@@ -112,7 +175,6 @@ function text_id_is(_textid){
 			scr_option("item","fight.item");
 			scr_option("skill","fight.skill");
 			scr_option("defend","fight.defend");
-			cutscene_event("step");
 		break;
 		case ("ajohn turn"):
 			text_engine("Ajohn's turn", 0.8, "top");
@@ -120,7 +182,6 @@ function text_id_is(_textid){
 			scr_option("item","fight.item");
 			scr_option("skill","afight.skill");
 			scr_option("defend","fight.defend");
-			cutscene_event("step");
 		break;
 		case "fight.attack":
 			if fight.turn==0 fight.playerAct="attack";
@@ -144,7 +205,6 @@ function text_id_is(_textid){
 			for (var i=0; i<array_length(global.items); i++){
 				scr_option(global.items[i],global.items[i]);
 			}
-			cutscene_event("step");
 		break;
 		case "fight.win":
 			text_engine("Beebo and Ajohn were victorious!",0.8,"top");
@@ -152,7 +212,9 @@ function text_id_is(_textid){
 			text_engine(string("Ajohn recieved {0} experience points!",fight.ajohnXP),0.8,"top");
 			text_engine(string("The party recieved ${0}!",fight.gold),0.8,"top");
 			cutscene_event("fight step");
-			cutscene_event("step");
+			global.gold+=fight.gold;
+			global.characters.beebo.xp+=fight.beeboXP;
+			global.characters.ajohn.xp+=fight.ajohnXP;
 		break;
 		case "promethazine":
 			if fight.turn==0{
@@ -212,7 +274,6 @@ function text_id_is(_textid){
 			if fight.turn==0 fight.beeboTarg="Cifirie";
 			else if fight.turn==1 fight.ajohnTarg="Cifirie";
 			cutscene_event("fight step")
-			cutscene_event("step")
 		break;
 	}	
 	

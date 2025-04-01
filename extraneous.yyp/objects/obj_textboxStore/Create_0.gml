@@ -25,6 +25,7 @@ sound[0] = "";
 char[0]="";
 event[0]="";
 pause=false;
+nextEvent="";
 
 // options
 option[0] = "";

@@ -1,6 +1,8 @@
 depth = -9998
 // SETUP
 
+show_debug_message("txtbox created");
+
 txtbox_x = 0;
 txtbox_y = 0;
 txtbox_width = 574;
@@ -25,6 +27,7 @@ sound[0] = "";
 char[0]="";
 event[0]="";
 pause=false;
+nextEvent="";
 
 //portrait
 
