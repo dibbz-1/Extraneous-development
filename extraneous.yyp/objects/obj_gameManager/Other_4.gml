@@ -3,7 +3,7 @@ instance_activate_object(obj_cameraManager);
 switch room{
 	case rm_strt:
 		
-		fadeToRoom(rm001_testA,10,c_black,101,84);
+		fadeToRoom(rm_intro,10,c_black,312,196);
 	break;
 	
 	case rm_intro:

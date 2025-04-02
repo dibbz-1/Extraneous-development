@@ -21,6 +21,7 @@ global.ajonXP=0;
 //playerSetup
 global.playeryPrev=0;
 global.playerxPrev=0;
+global.roomPrev=noone;
 
 //text setup
 draw_set_font(fnt_default);

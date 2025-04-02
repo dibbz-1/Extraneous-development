@@ -118,14 +118,21 @@ else if event[page]==""
 					instance_destroy();
 				}
 				
-			} else if nextEvent=="step"{
-				global.cutStep++;
-				if (option_pos >= 0){
-					create_text(option_link_id[option_pos]);
+			} else{
+				switch nextEvent{
+				case "step":
+					global.cutStep++;
+				break;
+				case "fight step":
+					global.fightingState++;
+				break;
+				case "stepReset":
+					global.cutStep=1;
+				break;
+				case "stepBack":
+					global.cutStep--;
+				break;
 				}
-				instance_destroy();
-			} else if nextEvent=="stepReset"{
-				global.cutStep=1;
 				if (option_pos >= 0){
 					create_text(option_link_id[option_pos]);
 				}
@@ -251,48 +258,10 @@ else if event[page]==""
 } else {
 	show_debug_message(event[page])
 	switch event[page]{
-		case "fight goober":
-			start_fight("guy");
-		break;
-		
-		case "focus beebo":
-			cutState = cutsceneStates.active;
-			obj_cameraManager.gliding=5;
-		break;
-		
-		case "focus ajohn":
-			obj_cameraManager.gliding=3;
-		break;
-		
 		case "fight step":
 			global.fightingState++;
 			//show_debug_message("boo");
-			
 		break;
-		
-		case "focus off":
-			obj_cameraManager.gliding=1;
-		break;
-		
-		case "cutscene test":
-			global.mus = audio_play_sound(mus_ajohnTheme,1,1);
-		break;
-		
-		case "ajohn mus":
-			audio_stop_all();
-			global.mus = audio_play_sound(mus_ajohnTheme,1,1);	
-		break;
-		
-		case "outside mus":
-			audio_stop_all();
-			global.mus = audio_play_sound(mus_outside,1,1);	
-		break;
-		
-		case "mus stop":
-			global.mus = noone;
-			audio_stop_all();
-		break;
-		
 		
 		case "step":
 			++global.cutStep;

@@ -192,7 +192,6 @@ function text_id_is(_textid){
 					scr_option(global.enemy[i],global.enemy[i]);
 				}
 			}
-			cutscene_event("step");
 		break;
 		case "fight.defend":
 			if fight.turn==0 fight.playerAct="defend";
@@ -213,8 +212,8 @@ function text_id_is(_textid){
 			text_engine(string("The party recieved ${0}!",fight.gold),0.8,"top");
 			cutscene_event("fight step");
 			global.gold+=fight.gold;
-			global.characters.beebo.xp+=fight.beeboXP;
-			global.characters.ajohn.xp+=fight.ajohnXP;
+			global.charDat.beebo.xp+=fight.beeboXP;
+			global.charDat.ajohn.xp+=fight.ajohnXP;
 		break;
 		case "promethazine":
 			if fight.turn==0{
@@ -237,7 +236,6 @@ function text_id_is(_textid){
 		break;
 		case "log_locked":
 			text_engine("locked.",1,"beebo","neutral");
-			cutscene_event("step");
 		break;
 		
 		case "Bug A":
