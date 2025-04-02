@@ -1,4 +1,5 @@
 obj_player.image_alpha=1;
+instance_activate_object(obj_cameraManager);
 switch room{
 	case rm_strt:
 		

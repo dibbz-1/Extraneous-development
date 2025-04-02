@@ -41,3 +41,8 @@ function array_all_ext(_array,_value){
 		}
 	}
 }
+
+function set_player_pos(){
+	global.playerxPrev=obj_player.x;
+	global.playeryPrev=obj_player.y;
+}

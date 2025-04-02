@@ -18,6 +18,10 @@ global.gold=0;
 global.beebXP=0;
 global.ajonXP=0;
 
+//playerSetup
+global.playeryPrev=0;
+global.playerxPrev=0;
+
 //text setup
 draw_set_font(fnt_default);
 draw_set_valign(fa_top);

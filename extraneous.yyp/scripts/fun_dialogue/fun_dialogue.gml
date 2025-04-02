@@ -90,7 +90,7 @@ function text_id_is(_textid){
 		
 		// shop dialogue \\
 		case "log.shopGreet":
-			text_engine("uhhh... sorry dude I'm like so damn high right now huhuh...", 0.7, "squeeze");
+			text_engine("oh, hey lil dude.", 0.7, "squeeze");
 			cutscene_event("step");
 		break;
 		case "log.shopOpt":
@@ -107,12 +107,12 @@ function text_id_is(_textid){
 		case "shopBuy":
 			text_engine("alright, here are your options", 1, "squeeze");
 			scr_option(string("Sword: ${0}",global.itemDat.sword.price),"shopSwd");
-			scr_option(string("Wizard Bar: ${0}",global.itemDat.wizbar.price),"shopDoob");
-			scr_option(string("Doobie: ${0}",global.itemDat.doobie.price),"shopWB");
+			scr_option(string("Wizard Bar: ${0}",global.itemDat.wizbar.price),"shopWB");
+			scr_option(string("Doobie: ${0}",global.itemDat.doobie.price),"shopDoob");
 			scr_option("nevermind.","log.shopOpt");
 		break;
 		case "shopTalk":
-			text_engine("sure, what do you wanna know?",1,"squeeze");
+			text_engine("what do you wanna know?",1,"squeeze");
 			scr_option("stain","shopStain");
 			scr_option("stickers","shopStickers");
 			scr_option("mob","shopMob");

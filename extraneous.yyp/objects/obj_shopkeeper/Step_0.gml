@@ -15,7 +15,8 @@ switch global.cutStep{
 		instance_activate_object(obj_cameraManager);
 		global.plrMove=true
 		obj_player.image_alpha=0;
-		fadeToRoom(rm001_testA,10,c_black,0,0);
+		fadeToRoom(rm001_testA,10,c_black,global.playerxPrev,global.playeryPrev);
 		global.cutStep=0;
+		obj_playerInfo.gliding=3;
 	break;
 }
