@@ -97,10 +97,18 @@ if global.fightingState==6 && !alarmStarted{
 else if global.fightingState==7 && !alarmStarted{
 	if global.enemyTurn<=global.enemyCount{
 		if global.enemy[global.enemyTurn]==enemy{
+			enemyTurn=global.enemy[global.enemyTurn];
 			if string_count("Bug",global.enemy[global.enemyTurn])>0 enemyTurn="bug"
 			if string_count("Worm",global.enemy[global.enemyTurn])>0 enemyTurn="worm"
+			
 			switch enemyTurn{
 				case "bug":
+					show_debug_message("bug is attacking");
+					bullets=0;
+					alarm[3]=50;
+					alarmStarted=true;
+				break;
+				case "Cifirie":
 					show_debug_message("bug is attacking");
 					bullets=0;
 					alarm[3]=50;

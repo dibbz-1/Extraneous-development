@@ -96,7 +96,8 @@ function scr_option(_option, _link_id){
 }
 
 function create_text(_textid){
-	//show_debug_message("txt created");
+	show_debug_message(_textid);
+	show_debug_message("txt created");
 	with(instance_create_depth(x,y,-9999,obj_textbox)){
 		text_id_is(_textid);
 			

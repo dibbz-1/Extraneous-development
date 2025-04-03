@@ -3,10 +3,12 @@ switch global.fightingState{
 		glide_sin(310,y,5);
 	break;
 	case 4:
-		switch obj_textbox.option[obj_textbox.option_pos] 
-		{
-			case inst.enemy: glide_sin(300,y,5);
-			default: glide_sin(310,y,5);
+		if instance_exists(obj_textbox){
+			switch obj_textbox.option[obj_textbox.option_pos] 
+			{
+				case inst.enemy: glide_sin(300,y,5);
+				default: glide_sin(310,y,5);
+			}
 		}
 	break;
 	default:

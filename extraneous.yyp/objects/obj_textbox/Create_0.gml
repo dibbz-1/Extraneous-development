@@ -1,7 +1,7 @@
 depth = -9998
 // SETUP
 
-show_debug_message("txtbox created");
+//show_debug_message("created");
 
 txtbox_x = 0;
 txtbox_y = 0;

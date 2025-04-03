@@ -69,16 +69,16 @@ function text_id_is(_textid){
 		break;
 		case "fight.cifiStart":
 			text_engine("YOU FOOLISH- uh- BEINGS..! You DARED anger me with your insults, and now you will pay!",0.9,"enemy");
-			text_engine("That's not fair! I just told this guy he's in limbo, how the hell do you expect him to fight??",0.9,"ajohn");
-			text_engine("I should be fine, let's just get this over with so I can process this whole thing.",0.9,"beebo");
-			text_engine("alright, here's the basics of fighting. first you decide who's turn it is.",0.9,"ajohn");
-			text_engine("If you don't want to go for whatever reason you can select my banner instead of your own.",0.9,"ajohn");
-			text_engine("Huh?",0.9,"beebo");
-			text_engine("Nevermind. Once you decide who's going, you can choose to use an item, a skill, or just defend.",0.9,"ajohn");
-			text_engine("Those all seem pretty self explanitory.",0.9,"beebo");
-			text_engine("Can we go now?",0.9,"enemy");
-			text_engine("Yeah, let's go. I think we're all set.",0.9,"ajohn");
-			text_engine("Try attacking first.",0.9,"ajohn");
+			//text_engine("That's not fair! I just told this guy he's in limbo, how the hell do you expect him to fight??",0.9,"ajohn");
+			//text_engine("I should be fine, let's just get this over with so I can process this whole thing.",0.9,"beebo");
+			//text_engine("alright, here's the basics of fighting. first you decide who's turn it is.",0.9,"ajohn");
+			//text_engine("If you don't want to go for whatever reason you can select my banner instead of your own.",0.9,"ajohn");
+			//text_engine("Huh?",0.9,"beebo");
+			//text_engine("Nevermind. Once you decide who's going, you can choose to use an item, a skill, or just defend.",0.9,"ajohn");
+			//text_engine("Those all seem pretty self explanitory.",0.9,"beebo");
+			//text_engine("Can we go now?",0.9,"enemy");
+			//text_engine("Yeah, let's go. I think we're all set.",0.9,"ajohn");
+			//text_engine("Try attacking first.",0.9,"ajohn");
 			cutscene_event("fight step");
 		break;
 		
@@ -271,7 +271,8 @@ function text_id_is(_textid){
 		case "Cifirie":
 			if fight.turn==0 fight.beeboTarg="Cifirie";
 			else if fight.turn==1 fight.ajohnTarg="Cifirie";
-			cutscene_event("fight step")
+			//text_engine("silly",1,"top");
+			cutscene_event("fight step");
 		break;
 	}	
 	
